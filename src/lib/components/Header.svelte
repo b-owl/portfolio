@@ -1,5 +1,5 @@
 <script>
-  import { page } from "$app/stores";
+  import { page } from '$app/stores'
 </script>
 
 <header>
@@ -8,21 +8,21 @@
       <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
     </svg>
     <ul>
-      <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
         <a href="/">Home</a>
       </li>
-      <li aria-current={$page.url.pathname === "/about" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
         <a href="/about">About</a>
       </li>
-      <li aria-current={$page.url.pathname === "/service" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === '/service' ? 'page' : undefined}>
         <a href="/service">Service</a>
       </li>
       <li
-        aria-current={$page.url.pathname === "/portfolio" ? "page" : undefined}
+        aria-current={$page.url.pathname === '/portfolio' ? 'page' : undefined}
       >
         <a href="/portfolio">Portfolio</a>
       </li>
-      <li aria-current={$page.url.pathname === "/contact" ? "page" : undefined}>
+      <li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
         <a href="/contact">Contact</a>
       </li>
     </ul>
@@ -59,9 +59,9 @@
         position: relative;
         height: 100%;
 
-        &[aria-current="page"]::before {
+        &[aria-current='page']::before {
           --size: 6px;
-          content: "";
+          content: '';
           width: 0;
           height: 0;
           position: absolute;

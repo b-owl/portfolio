@@ -1,11 +1,14 @@
 <script>
   import 'tailwindcss/tailwind.css'
-  import Header from './Header.svelte'
   import './styles.css'
+
+  import Header from '$lib/components/Header.svelte'
+  import ContactShortcut from '$lib/components/ContactShortcut.svelte'
 </script>
 
 <div data-theme="sunset" class="app rtl:font-soltan font-robotoBold">
   <Header />
+  <ContactShortcut />
 
   <main>
     <slot />

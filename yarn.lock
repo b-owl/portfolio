@@ -200,6 +200,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify/svelte@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@iconify/svelte@npm:4.0.2"
+  dependencies:
+    "@iconify/types": "npm:^2.0.0"
+  peerDependencies:
+    svelte: ">4.0.0"
+  checksum: 10c0/39aba9f24635d8ffef14b51c2dea9efe4de54a83ec68645bc0e006778196247f5d336046958b4ec1219040ad11c4eb31a0d8476e261bb57d8a8ad0264a423068
+  languageName: node
+  linkType: hard
+
+"@iconify/types@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@iconify/types@npm:2.0.0"
+  checksum: 10c0/65a3be43500c7ccacf360e136d00e1717f050b7b91da644e94370256ac66f582d59212bdb30d00788aab4fc078262e91c95b805d1808d654b72f6d2072a7e4b2
+  languageName: node
+  linkType: hard
+
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -2848,6 +2866,7 @@ __metadata:
   resolution: "svelte-portfolio@workspace:."
   dependencies:
     "@fontsource/fira-mono": "npm:^4.5.10"
+    "@iconify/svelte": "npm:^4.0.2"
     "@neoconfetti/svelte": "npm:^1.0.0"
     "@sveltejs/adapter-auto": "npm:^3.0.0"
     "@sveltejs/kit": "npm:^2.0.0"
