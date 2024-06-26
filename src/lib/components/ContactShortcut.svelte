@@ -56,13 +56,13 @@
 
 <style lang="scss">
   .icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 24px;
+    height: 24px;
   }
 
   .skeleton-loader {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: linear-gradient(
       90deg,
@@ -95,4 +95,6 @@
       opacity: 1;
     }
   }
+
+  /* Your other styles here */
 </style>
