@@ -2,7 +2,7 @@
   import { page } from '$app/stores'
 </script>
 
-<header class="absolute top-0 left-1/2 -translate-x-1/2 z-50">
+<header class="absolute top-0 left-1/2 -translate-x-1/2 z-10">
   <nav class="flex justify-center" dir="ltr">
     <ul
       class="rounded-ee-3xl rounded-es-3xl px-6 relative p-0 m-0 h-12 flex justify-center items-center bg-secondary/40 backdrop-filter backdrop-blur-sm"

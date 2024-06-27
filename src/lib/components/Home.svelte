@@ -118,7 +118,7 @@
 </script>
 
 <div
-  class="flex flex-col items-start justify-center w-full h-screen p-10 overflow-hidden activeSection md:pl-48 gap-14"
+  class="flex flex-col items-start justify-center w-full h-screen p-10 overflow-hidden activeSection md:pl-48 md:pr-48 gap-14"
 >
   <div class="snowframe" aria-hidden="true">
     {#each snowflakes as flake}
