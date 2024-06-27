@@ -131,7 +131,7 @@
   <div class="snowframe" aria-hidden="true">
     {#each snowflakes as flake}
       <div
-        class="snowflake"
+        class="text-blue-200 snowflake"
         style={`opacity: ${flake.opacity}; transform: scale(${flake.scale}) rotate(${flake.rotation}deg); left: ${flake.x}%; top: calc(${flake.y}% - ${flake.scale}rem)`}
       >
         {flake.snowIcon}
