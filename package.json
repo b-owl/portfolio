@@ -28,6 +28,8 @@
   },
   "type": "module",
   "dependencies": {
+    "i18next": "^23.11.5",
+    "svelte-i18next": "^2.2.2",
     "tailwindcss-dir": "^4.0.0"
   }
 }

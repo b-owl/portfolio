@@ -4,9 +4,14 @@
   import CVfile from '$lib/assets/cv.pdf'
   import { writable, type Writable } from 'svelte/store'
   import { fly } from 'svelte/transition'
+  import { i18n } from '../../../i18n'
 
   let iconsLoaded: Writable<boolean> = writable(true)
-  let skills: string[] = ['webdev', 'frontEnd', 'designer']
+  let skills: string[] = [
+    $i18n.t('webdev'),
+    $i18n.t('frontEnd'),
+    $i18n.t('designer'),
+  ]
   let currentSkillIndex: number = 0
   let currentSkill: string = ''
   let isDeleting: boolean = false
@@ -135,42 +140,43 @@
     <div class="w-full space-y-8">
       <div class="relative w-52">
         <div
-          class="h-6 rounded bg-gradient-to-r from-gray-300/20 via-gray-300/50 to-gray-300/20 animate-pulse"
-        ></div>
+          class="h-6 rounded bg-gradient-to-r from-info/60 via-secondary/40 to-info/60 animate-pulse"
+        />
       </div>
 
       <div class="space-y-2">
         <div
-          class="w-2/4 h-10 rounded bg-gradient-to-r from-gray-300/20 via-gray-300/50 to-gray-300/20 animate-pulse"
-        ></div>
+          class="w-2/4 h-10 rounded bg-gradient-to-r from-info/60 via-secondary/40 to-info/60 animate-pulse"
+        />
         <div
-          class="w-1/3 h-10 rounded bg-gradient-to-r from-gray-300/20 via-gray-300/50 to-gray-300/20 animate-pulse"
-        ></div>
+          class="w-1/3 h-10 rounded bg-gradient-to-r from-info/60 via-secondary/40 to-info/60 animate-pulse"
+        />
       </div>
 
-      <div class="flex items-center justify-start space-x-5">
+      <div class="flex items-center justify-start gap-5">
         <div
-          class="w-32 h-10 rounded bg-gradient-to-r from-gray-300/20 via-gray-300/50 to-gray-300/20 animate-pulse"
-        ></div>
+          class="w-32 h-10 rounded bg-gradient-to-r from-info/60 via-secondary/40 to-info/60 animate-pulse"
+        />
         <div
-          class="w-32 h-10 rounded bg-gradient-to-r from-gray-300/20 via-gray-300/50 to-gray-300/20 animate-pulse"
-        ></div>
+          class="w-32 h-10 rounded bg-gradient-to-r from-info/60 via-secondary/40 to-info/60 animate-pulse"
+        />
       </div>
     </div>
   {:else}
     <div class="relative w-52">
       <h2 class="absolute z-10 text-xl font-semibold rtl:font-casablanca">
-        Mehdi Keramati
+        {$i18n.t('myName')}
       </h2>
       <span
-        class="absolute w-10 h-10 bg-blue-500 rounded-full rtl:-right-3 rtl:-top-3 -left-4 -top-2"
+        class="absolute w-10 h-10 rounded-full bg-secondary rtl:-right-3 rtl:-top-3 -left-4 -top-2"
       ></span>
     </div>
 
     <h1
       class="p-2 text-3xl font-semibold md:text-4xl lg:text-5xl ltr:font-summer"
     >
-      I'm
+      {$i18n.t('im')}
+
       <span class="titleSkills">
         {currentSkill}
       </span>
@@ -180,15 +186,19 @@
     <div class="flex items-center justify-center font-semibold gap-x-5">
       <button
         type="button"
-        class="relative w-32 px-4 py-6 md:w-36 cursor-grab"
+        class="relative w-32 px-4 py-6 md:w-36 cursor-grab bg-secondary/30"
         id="buttonAnime"
       >
-        <h5 class="w-full h-full absolute left-0 top-3.5 z-10">welcome</h5>
-        <span class="absolute top-0 left-0 z-0 w-full h-full clip-path"></span>
+        <h5 class="w-full h-full absolute left-0 top-3.5 z-10">
+          {$i18n.t('welcome')}
+        </h5>
+        <span
+          class="absolute top-0 left-0 z-0 w-full h-full bg-secondary clip-path"
+        ></span>
       </button>
       <a href={CVfile} download="cv.pdf">
         <button type="button" class="w-32 rounded-lg md:w-36 btn glass">
-          download CV
+          {$i18n.t('readMore')}
         </button>
       </a>
     </div>
@@ -236,7 +246,6 @@
 
   .clip-path {
     animation: clipPath 3s linear infinite;
-    background-color: rgb(28, 70, 133);
   }
 
   @keyframes clipPath {

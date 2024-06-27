@@ -1,5 +1,5 @@
 <script>
-  import Home from '$lib/components/Home.svelte'
+  import Home from '$lib/components/home/Home.svelte'
 </script>
 
 <svelte:head>

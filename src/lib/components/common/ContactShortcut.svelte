@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import Icon from '@iconify/svelte'
   import { writable } from 'svelte/store'
+  import { i18n } from '../../../i18n'
 
   let iconsLoaded = writable(false)
 
@@ -40,17 +41,17 @@
         href={link.href}
       >
         {#if $iconsLoaded}
-          <Icon icon={link.icon} class="icon fade-in" />
+          <Icon icon={link.icon} class="icon hover:text-accent fade-in" />
         {:else}
-          <div class="skeleton-loader"></div>
+          <div
+            class="skeleton-loader bg-gradient-to-r from-info/60 via-secondary/40 to-info/60"
+          />
         {/if}
       </a>
     {/each}
 
-    <div
-      class="w-1 mx-3 light:border-black h-14 border-r-1 dark:border-white"
-    ></div>
-    <p class="m-5 mt-8 -rotate-90 rtl:font-bold">Follow Me</p>
+    <div class="w-1 mx-3 border-accent light:border-black h-14 border-r-1" />
+    <p class="m-5 mt-8 -rotate-90 rtl:font-bold">{$i18n.t('followMe')}</p>
   </div>
 </aside>
 
@@ -64,12 +65,6 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: linear-gradient(
-      90deg,
-      rgba(#ccc, 0.2) 25%,
-      rgba(#ccc, 0.5) 50%,
-      rgba(#ccc, 0.2) 75%
-    );
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
   }

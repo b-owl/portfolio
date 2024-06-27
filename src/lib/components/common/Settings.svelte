@@ -1,23 +1,8 @@
 <script lang="ts">
   import Icon from '@iconify/svelte'
-  import { settingsStore } from '../store'
+  import { settingsStore } from '$lib/store'
   import { onMount } from 'svelte'
-
-  // Simple translation function
-  function t(key: string): string {
-    const translations: { [key: string]: string } = {
-      settings: 'Settings',
-      changeLang: 'Change Language',
-      fa: 'Farsi',
-      en: 'English',
-      themeOptions: 'Theme Options',
-      light: 'Light',
-      dark: 'Dark',
-      night: 'Night',
-      themeColors: 'Theme Colors',
-    }
-    return translations[key] || key
-  }
+  import { i18n } from '../../../i18n/index'
 
   let currentTheme: 'light' | 'dark' | 'night'
   let currentLang: 'en' | 'fa'
@@ -29,6 +14,7 @@
 
     const prevLang = localStorage.getItem('currentLang')
     prevLang && settingsStore.setLang(prevLang as 'en' | 'fa')
+    prevLang && $i18n.changeLanguage(prevLang)
   })
 
   settingsStore.subscribe(value => {
@@ -45,6 +31,7 @@
   function setLang(event: Event): void {
     const target = event.target as HTMLInputElement
     settingsStore.setLang(target.value as 'en' | 'fa')
+    $i18n.changeLanguage(target.value)
   }
 
   function setSettings(value: boolean): void {
@@ -65,7 +52,7 @@
 >
   <button
     on:click={() => setSettings(false)}
-    class="absolute top-0 left-0 -z-10 w-full h-full overlay bg-half-transparent-dark"
+    class="absolute top-0 left-0 w-full h-full -z-10 overlay bg-half-transparent-dark"
   ></button>
 
   <div
@@ -74,14 +61,14 @@
     } transition-all fixed right-0 h-full p-5 w-96 bg-secondary/45 border-l rtl:border-r backdrop-blur-sm`}
   >
     <div class="flex justify-between w-full py-3 text-xl font-semibold">
-      <h3>{t('settings')}</h3>
+      <h3>{$i18n.t('settings')}</h3>
       <button type="button" on:click={() => setSettings(false)}>
         <Icon font-size="1.6rem" icon="iconamoon:close-circle-1-duotone" />
       </button>
     </div>
 
     <div class="w-full py-3 border-t-1">
-      <h3 class="mb-4">{t('changeLang')}</h3>
+      <h3 class="mb-4">{$i18n.t('changeLang')}</h3>
       <div class="flex items-center gap-1">
         <input
           type="radio"
@@ -92,7 +79,7 @@
           on:change={setLang}
         />
         <label class="text-sm" for="fa">
-          {t('fa')}
+          {$i18n.t('fa')}
         </label>
       </div>
       <div class="flex items-center gap-1">
@@ -105,13 +92,13 @@
           on:change={setLang}
         />
         <label class="text-sm" for="en">
-          {t('en')}
+          {$i18n.t('en')}
         </label>
       </div>
     </div>
 
     <div class="w-full py-3 border-t-1">
-      <h3 class="mb-4">{t('themeOptions')}</h3>
+      <h3 class="mb-4">{$i18n.t('themeOptions')}</h3>
       <div class="flex items-center gap-1">
         <input
           type="radio"
@@ -122,7 +109,7 @@
           on:change={setTheme}
         />
         <label class="text-sm" for="light">
-          {t('light')}
+          {$i18n.t('light')}
         </label>
       </div>
       <div class="flex items-center gap-1">
@@ -135,7 +122,7 @@
           on:change={setTheme}
         />
         <label class="text-sm" for="dark">
-          {t('dark')}
+          {$i18n.t('dark')}
         </label>
       </div>
       <div class="flex items-center gap-1">
@@ -148,7 +135,7 @@
           on:change={setTheme}
         />
         <label class="text-sm" for="night">
-          {t('night')}
+          {$i18n.t('night')}
         </label>
       </div>
     </div>

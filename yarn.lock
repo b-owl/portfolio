@@ -22,6 +22,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.2":
+  version: 7.24.7
+  resolution: "@babel/runtime@npm:7.24.7"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 10c0/b6fa3ec61a53402f3c1d75f4d808f48b35e0dfae0ec8e2bb5c6fc79fb95935da75766e0ca534d0f1c84871f6ae0d2ebdd950727cfadb745a2cdbef13faef5513
+  languageName: node
+  linkType: hard
+
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -1532,6 +1541,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"i18next@npm:^23.11.5":
+  version: 23.11.5
+  resolution: "i18next@npm:23.11.5"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: 10c0/b0bec64250a3e529d4c51e2fc511406a85c5dde3d005d3aabe919551ca31dfc0a8f5490bf6e44649822e895a1fa91a58092d112367669cd11b2eb89e6ba90d1a
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.6.2":
   version: 0.6.3
   resolution: "iconv-lite@npm:0.6.3"
@@ -2438,6 +2456,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.14.0":
+  version: 0.14.1
+  resolution: "regenerator-runtime@npm:0.14.1"
+  checksum: 10c0/1b16eb2c4bceb1665c89de70dcb64126a22bc8eb958feef3cd68fe11ac6d2a4899b5cd1b80b0774c7c03591dc57d16631a7f69d2daa2ec98100e2f29f7ec4cc4
+  languageName: node
+  linkType: hard
+
 "resolve@npm:^1.1.7, resolve@npm:^1.14.2, resolve@npm:^1.22.2":
   version: 1.22.8
   resolution: "resolve@npm:1.22.8"
@@ -2861,6 +2886,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-i18next@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "svelte-i18next@npm:2.2.2"
+  peerDependencies:
+    i18next: "*"
+    svelte: "*"
+  checksum: 10c0/463b7a7c2f102898dce8a20564ffa2be586ea76ed2e53340a417e3fe43c2980fe7a97f5106c351f4c7ed41d234e8f830f539520031a0fd0ffcc3b61186a67fc8
+  languageName: node
+  linkType: hard
+
 "svelte-portfolio@workspace:.":
   version: 0.0.0-use.local
   resolution: "svelte-portfolio@workspace:."
@@ -2873,10 +2908,12 @@ __metadata:
     "@sveltejs/vite-plugin-svelte": "npm:^3.0.0"
     autoprefixer: "npm:^10.4.19"
     daisyui: "npm:^4.12.8"
+    i18next: "npm:^23.11.5"
     postcss: "npm:^8.4.38"
     sass: "npm:^1.77.6"
     svelte: "npm:^4.2.7"
     svelte-check: "npm:^3.6.0"
+    svelte-i18next: "npm:^2.2.2"
     tailwindcss: "npm:^3.4.4"
     tailwindcss-dir: "npm:^4.0.0"
     tslib: "npm:^2.4.1"
