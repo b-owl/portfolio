@@ -57,7 +57,7 @@
   function randomSnowflakeConfig(i: number): Snowflake {
     return {
       scale: SNOWFLAKE_MIN_SCALE + Math.random() * (1 - SNOWFLAKE_MIN_SCALE),
-      x: Math.random() * 100,
+      x: 0.83 * Math.random() * 100,
       y: -10 - Math.random() * 100,
       rotation: Math.floor(Math.random() * 360),
       snowIcon: SNOW_ICONS[i % SNOW_ICONS.length],
