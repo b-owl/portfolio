@@ -2,16 +2,17 @@
   import { onMount } from 'svelte'
   import { MePic } from '$lib/assets/dummy'
   import CVfile from '$lib/assets/cv.pdf'
-  import { writable, type Writable } from 'svelte/store'
+  import { derived, writable, type Writable } from 'svelte/store'
   import { fly } from 'svelte/transition'
   import { i18n } from '../../../i18n'
 
   let iconsLoaded: Writable<boolean> = writable(true)
-  let skills: string[] = [
+
+  const skills = derived(i18n, $i18n => [
     $i18n.t('webdev'),
     $i18n.t('frontEnd'),
     $i18n.t('designer'),
-  ]
+  ])
   let currentSkillIndex: number = 0
   let currentSkill: string = ''
   let isDeleting: boolean = false
@@ -37,15 +38,17 @@
   }
 
   // Typewriter effect
+
   async function typewriter(): Promise<void> {
-    const skill = skills[currentSkillIndex]
+    const currentSkills = $skills // Get the current value of the skills store
+    const skill = currentSkills[currentSkillIndex]
 
     if (!isDeleting && currentSkill === skill) {
       isDeleting = true
       await new Promise(resolve => setTimeout(resolve, 2000))
     } else if (isDeleting && currentSkill === '') {
       isDeleting = false
-      currentSkillIndex = (currentSkillIndex + 1) % skills.length
+      currentSkillIndex = (currentSkillIndex + 1) % currentSkills.length
       await new Promise(resolve => setTimeout(resolve, 500))
     }
 
@@ -169,14 +172,13 @@
       </h2>
       <span
         class="absolute w-10 h-10 rounded-full bg-secondary rtl:-right-3 rtl:-top-3 -left-4 -top-2"
-      ></span>
+      />
     </div>
 
     <h1
       class="p-2 text-3xl font-semibold md:text-4xl lg:text-5xl ltr:font-summer"
     >
-      {$i18n.t('im')}
-
+      {$i18n.t('im')}{' '}
       <span class="titleSkills">
         {currentSkill}
       </span>
