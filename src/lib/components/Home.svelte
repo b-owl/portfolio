@@ -1,20 +1,38 @@
-<script>
-  import { onMount, getContext, tick } from 'svelte'
-  import { fade } from 'svelte/transition'
+<script lang="ts">
+  import { onMount } from 'svelte'
   import { MePic } from '$lib/assets/dummy'
   import CVfile from '$lib/assets/cv.pdf'
-  import { writable } from 'svelte/store'
+  import { writable, type Writable } from 'svelte/store'
   import { fly } from 'svelte/transition'
 
-  let iconsLoaded = writable(true)
-  let skills = ['webdev', 'frontEnd', 'designer']
-  let currentSkillIndex = 0
-  let currentSkill = ''
-  let isDeleting = false
-  let snowflakes = []
+  let iconsLoaded: Writable<boolean> = writable(true)
+  let skills: string[] = ['webdev', 'frontEnd', 'designer']
+  let currentSkillIndex: number = 0
+  let currentSkill: string = ''
+  let isDeleting: boolean = false
+
+  // Snow configuration
+  const SNOWFLAKES_COUNT: number = 300
+  const SNOWFLAKE_MIN_SCALE: number = 0.1
+  const MELTING_SPEED: number = 1.12
+  const WIND_FORCE: number = 0.01
+  const FALL_SPEED: number = 0.15
+  const SNOW_ICONS: string[] = ['❆', '❅', '❄']
+  const TARGET_FPS: number = 60
+
+  const MS_BETWEEN_FRAMES: number = 1000 / TARGET_FPS
+
+  interface Snowflake {
+    scale: number
+    x: number
+    y: number
+    rotation: number
+    snowIcon: string
+    opacity: number
+  }
 
   // Typewriter effect
-  async function typewriter() {
+  async function typewriter(): Promise<void> {
     const skill = skills[currentSkillIndex]
 
     if (!isDeleting && currentSkill === skill) {
@@ -36,30 +54,58 @@
     setTimeout(typewriter, delay)
   }
 
-  // Snowfall effect
-  function createSnowflake() {
+  function randomSnowflakeConfig(i: number): Snowflake {
     return {
-      x: Math.random() * window.innerWidth,
-      y: -10,
-      size: Math.random() * 3 + 2,
-      speed: Math.random() * 1.5 + 0.5,
+      scale: SNOWFLAKE_MIN_SCALE + Math.random() * (1 - SNOWFLAKE_MIN_SCALE),
+      x: Math.random() * 100,
+      y: -10 - Math.random() * 100,
+      rotation: Math.floor(Math.random() * 360),
+      snowIcon: SNOW_ICONS[i % SNOW_ICONS.length],
+      opacity: 0.999,
     }
   }
 
-  function updateSnowflakes() {
-    snowflakes = snowflakes
-      .map(flake => ({
-        ...flake,
-        y: flake.y + flake.speed,
-        x: flake.x + Math.sin(flake.y * 0.01) * 0.5,
-      }))
-      .filter(flake => flake.y < window.innerHeight)
+  let snowflakes: Snowflake[] = new Array(SNOWFLAKES_COUNT)
+    .fill(null)
+    .map((_, i) => randomSnowflakeConfig(i))
+    .sort((a, b) => a.scale - b.scale)
 
-    while (snowflakes.length < 80) {
-      snowflakes.push(createSnowflake())
+  const updateSnowflakes = (): (() => void) => {
+    let frame: number
+    let lastTime: number
+
+    function loop(timestamp: number): void {
+      frame = requestAnimationFrame(loop)
+
+      const elapsed = timestamp - lastTime
+      lastTime = timestamp
+
+      let framesCompleted = elapsed / MS_BETWEEN_FRAMES
+
+      if (isNaN(framesCompleted)) {
+        framesCompleted = 1
+      }
+
+      snowflakes = snowflakes.map(flake => {
+        if (flake.y >= 100) {
+          flake.opacity = Math.pow(flake.opacity, MELTING_SPEED)
+        } else {
+          flake.y += FALL_SPEED * flake.scale * framesCompleted
+          flake.x += WIND_FORCE * flake.scale * framesCompleted
+          flake.rotation += 1 * framesCompleted
+        }
+        if (flake.opacity <= 0.02) {
+          flake = randomSnowflakeConfig(
+            Math.floor(Math.random() * SNOW_ICONS.length),
+          )
+        }
+        return flake
+      })
     }
 
-    requestAnimationFrame(updateSnowflakes)
+    loop(performance.now())
+
+    return () => cancelAnimationFrame(frame)
   }
 
   onMount(() => {
@@ -74,12 +120,14 @@
 <div
   class="flex flex-col items-start justify-center w-full h-screen p-10 overflow-hidden activeSection md:pl-48 gap-14"
 >
-  <div class="snowfall">
+  <div class="snowframe" aria-hidden="true">
     {#each snowflakes as flake}
       <div
-        class="bg-blue-500 snowflake"
-        style="left: {flake.x}px; top: {flake.y}px; width: {flake.size}px; height: {flake.size}px;"
-      ></div>
+        class="snowflake"
+        style={`opacity: ${flake.opacity}; transform: scale(${flake.scale}) rotate(${flake.rotation}deg); left: ${flake.x}%; top: calc(${flake.y}% - ${flake.scale}rem)`}
+      >
+        {flake.snowIcon}
+      </div>
     {/each}
   </div>
 
@@ -114,7 +162,6 @@
       <h2 class="absolute z-10 text-xl font-semibold rtl:font-casablanca">
         Mehdi Keramati
       </h2>
-      <!-- style="background: {$currentColor}" -->
       <span
         class="absolute w-10 h-10 bg-blue-500 rounded-full rtl:-right-3 rtl:-top-3 -left-4 -top-2"
       ></span>
@@ -173,15 +220,6 @@
     100% {
       opacity: 0;
     }
-  }
-
-  .snowfall {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
   }
 
   .snowflake {
