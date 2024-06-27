@@ -2,107 +2,35 @@
   import { page } from '$app/stores'
 </script>
 
-<header>
-  <nav dir="ltr">
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-    </svg>
-    <ul>
-      <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-        <a href="/">Home</a>
-      </li>
-      <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-        <a href="/about">About</a>
-      </li>
-      <li aria-current={$page.url.pathname === '/service' ? 'page' : undefined}>
-        <a href="/service">Service</a>
-      </li>
-      <li
-        aria-current={$page.url.pathname === '/portfolio' ? 'page' : undefined}
-      >
-        <a href="/portfolio">Portfolio</a>
-      </li>
-      <li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-        <a href="/contact">Contact</a>
-      </li>
+<header class="absolute top-0 left-1/2 -translate-x-1/2 z-50">
+  <nav class="flex justify-center" dir="ltr">
+    <ul
+      class="rounded-ee-3xl rounded-es-3xl px-6 relative p-0 m-0 h-12 flex justify-center items-center bg-secondary/40 backdrop-filter backdrop-blur-sm"
+    >
+      {#each [{ path: '/', label: 'Home' }, { path: '/about', label: 'About' }, { path: '/service', label: 'Service' }, { path: '/portfolio', label: 'Portfolio' }, { path: '/contact', label: 'Contact' }] as { path, label }}
+        <li
+          class="relative h-full"
+          aria-current={$page.url.pathname === path ? 'page' : undefined}
+        >
+          <a
+            href={path}
+            class="flex h-full items-center px-2 font-bold text-xs uppercase tracking-widest transition-colors duration-200 {$page
+              .url.pathname === path
+              ? 'before:content-[""] before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:border-[6px] before:border-transparent before:border-t-primary'
+              : ''}"
+          >
+            {label}
+          </a>
+        </li>
+      {/each}
     </ul>
-    <svg viewBox="0 0 2 3" aria-hidden="true">
-      <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-    </svg>
   </nav>
 </header>
 
 <style lang="scss">
-  header {
-    display: flex;
-    justify-content: center;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    --background: rgba(255, 255, 255, 0.7);
-
-    ul {
-      position: relative;
-      padding: 0;
-      margin: 0;
-      height: 3em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      background: var(--background);
-      background-size: contain;
-
-      li {
-        position: relative;
-        height: 100%;
-
-        &[aria-current='page']::before {
-          --size: 6px;
-          content: '';
-          width: 0;
-          height: 0;
-          position: absolute;
-          top: 0;
-          left: calc(50% - var(--size));
-          border: var(--size) solid transparent;
-          border-top: var(--size) solid var(--color-theme-1);
-        }
-
-        a {
-          display: flex;
-          height: 100%;
-          align-items: center;
-          padding: 0 0.5rem;
-          color: var(--color-text);
-          font-weight: 700;
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          text-decoration: none;
-          transition: color 0.2s linear;
-
-          @media (max-width: 468px) {
-            font-size: 0.55rem;
-          }
-
-          &:hover {
-            color: var(--color-theme-1);
-          }
-        }
-      }
-    }
-  }
-
-  svg {
-    width: 2em;
-    height: 3em;
-    display: block;
-
-    path {
-      fill: var(--background);
+  @media (max-width: 468px) {
+    a {
+      @apply text-[0.55rem];
     }
   }
 </style>
