@@ -180,14 +180,14 @@
     <div class="flex items-center justify-center font-semibold gap-x-5">
       <button
         type="button"
-        class="relative w-32 px-4 py-6 text-blue-200 md:w-36 cursor-grab"
+        class="relative w-32 px-4 py-6 md:w-36 cursor-grab"
         id="buttonAnime"
       >
         <h5 class="w-full h-full absolute left-0 top-3.5 z-10">welcome</h5>
         <span class="absolute top-0 left-0 z-0 w-full h-full clip-path"></span>
       </button>
       <a href={CVfile} download="cv.pdf">
-        <button type="button" class="w-32 px-4 py-6 md:w-36">
+        <button type="button" class="w-32 rounded-lg md:w-36 btn glass">
           download CV
         </button>
       </a>
@@ -236,7 +236,7 @@
 
   .clip-path {
     animation: clipPath 3s linear infinite;
-    background-color: rgb(24, 75, 117);
+    background-color: rgb(28, 70, 133);
   }
 
   @keyframes clipPath {
