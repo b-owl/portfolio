@@ -28,16 +28,20 @@
 </script>
 
 <section
-  class="z-10 flex items-center justify-center min-h-screen py-20 mx-auto activeSection lg:w-4/5 p-14 md:p-32 lg:p-10 md:gap-x-16"
+  class="relative z-10 flex items-center justify-center min-h-screen py-20 mx-auto activeSection w-full md:w-10/12 p-14 lg:p-10 md:gap-x-16"
 >
-  <div class="relative hidden h-92 lg:block lg:basis-1/3">
+  <div class="hidden h-92 xl:block basis-1/3">
     <div
       style=" z-index: -1"
-      class="absolute rounded-full bg-secondary w-72 h-72 top-36 left-2"
+      class="absolute rounded-full bg-secondary w-72 h-72 top-36 left-14 rtl:right-14"
     />
-    <img class="w-full h-full scale-effect" src={MePicCarton} alt="" />
+    <img
+      class="w-full h-full scale-effect"
+      src={MePicCarton}
+      alt="Mehdi Keramati"
+    />
   </div>
-  <div class="basis-full lg:basis-2/3">
+  <div class="basis-full xl:basis-2/3">
     <div class="relative">
       <h2 class="absolute z-10 text-xl rtl:font-TitrPlus ltr:font-summer">
         {$i18n.t('about')}
@@ -48,7 +52,9 @@
     </div>
 
     <div class="flex flex-col items-start">
-      <h1 class="mt-10 mb-5 text-4xl font-semibold rtl:font-casablanca">
+      <h1
+        class="mt-10 mb-5 text-2xl md:text-3xl lg:text-4xl font-semibold rtl:font-casablanca"
+      >
         {$i18n.t('helloName')}
       </h1>
       <div class="w-20 h-1 m-2 mb-4 bg-secondary" />

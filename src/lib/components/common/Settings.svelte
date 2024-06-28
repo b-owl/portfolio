@@ -42,7 +42,7 @@
 <button
   type="button"
   on:click={() => setSettings(true)}
-  class="fixed z-10 text-2xl font-semibold bottom-6 right-6 md:text-3xl"
+  class="fixed z-20 text-2xl font-semibold bottom-6 right-6 md:text-3xl"
 >
   <Icon icon="ci:settings" />
 </button>

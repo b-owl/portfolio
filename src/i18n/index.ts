@@ -21,7 +21,7 @@ i18next.init({
         readMore: 'Download CV',
         welcome: 'Welcome',
         about: 'ABOUT',
-        helloName: "Hello there , i'm Mehdi Keramati",
+        helloName: "Howdy, i'm Mehdi Keramati",
         AboutDescreption:
           "i'm FrontEnd web Developer and photoshop designer , 18 years old from northwest of Persia.",
         aboutSkills1: 'Frontend developer',
@@ -132,7 +132,7 @@ i18next.init({
         readMore: 'دانلود رزومه',
         welcome: 'خوش آمدید',
         about: 'درباره من',
-        helloName: 'سلام من مهدی کرامتی هستم',
+        helloName: 'درود, من مهدی کرامتی هستم',
         AboutDescreption:
           'برنامه نویس فرانت اند و گرافیست 18 ساله از شمال غرب ایران',
         aboutSkills1: 'برنامه نویس فرانت اند',
