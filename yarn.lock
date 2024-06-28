@@ -31,6 +31,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "@emailjs/browser@npm:4.3.3"
+  checksum: 10c0/deb9a4d76cca662a58da139f43ad4b6417485edbcf7a29569d516adee6462fb95e014a8a6f31bbaddf9ea3e77dd20d363ae8a377b289a7d9f95f568a76eed8b0
+  languageName: node
+  linkType: hard
+
 "@esbuild/aix-ppc64@npm:0.21.5":
   version: 0.21.5
   resolution: "@esbuild/aix-ppc64@npm:0.21.5"
@@ -2900,6 +2907,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "svelte-portfolio@workspace:."
   dependencies:
+    "@emailjs/browser": "npm:^4.3.3"
     "@fontsource/fira-mono": "npm:^4.5.10"
     "@iconify/svelte": "npm:^4.0.2"
     "@neoconfetti/svelte": "npm:^1.0.0"

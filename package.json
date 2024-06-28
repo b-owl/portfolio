@@ -28,6 +28,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "i18next": "^23.11.5",
     "svelte-i18next": "^2.2.2",
     "tailwindcss-dir": "^4.0.0"
