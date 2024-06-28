@@ -2922,6 +2922,7 @@ __metadata:
     svelte: "npm:^4.2.7"
     svelte-check: "npm:^3.6.0"
     svelte-i18next: "npm:^2.2.2"
+    swiper: "npm:^11.1.4"
     tailwindcss: "npm:^3.4.4"
     tailwindcss-dir: "npm:^4.0.0"
     tslib: "npm:^2.4.1"
@@ -2995,6 +2996,13 @@ __metadata:
     magic-string: "npm:^0.30.4"
     periscopic: "npm:^3.1.0"
   checksum: 10c0/33cb321b59d0d29730f44054e442adcfdb6f6b51968c60e4027a2d2aa59cba2e2360aa42b4c61b0223350eacfe8dbeb3b724476d03fffb89a3c87021edbb1562
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.1.4":
+  version: 11.1.4
+  resolution: "swiper@npm:11.1.4"
+  checksum: 10c0/a1e4b87f414f67f5da6a07b33d5ee20e54062d21f8bed88195d5d56decff6afddf683e130118b7fa12668de221f794ae63f6c073761b683a4b90bbd5eb585202
   languageName: node
   linkType: hard
 

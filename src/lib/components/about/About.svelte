@@ -47,12 +47,13 @@
       />
     </div>
 
-    <h1 class="mt-10 mb-5 text-4xl font-semibold rtl:font-casablanca">
-      {$i18n.t('helloName')}
-    </h1>
-    <div class="w-20 h-1 m-2 mb-4 bg-secondary" />
-    <p class="text-sm text-gray-400 text-md">{$i18n.t('AboutDescreption')}</p>
-
+    <div class="flex flex-col items-start">
+      <h1 class="mt-10 mb-5 text-4xl font-semibold rtl:font-casablanca">
+        {$i18n.t('helloName')}
+      </h1>
+      <div class="w-20 h-1 m-2 mb-4 bg-secondary" />
+      <p class="text-sm text-gray-400 text-md">{$i18n.t('AboutDescreption')}</p>
+    </div>
     <div class="grid gap-8 mt-12 md:grid-cols-2 gap-y-12">
       {#each aboutData as { skill, description, icon }}
         <div class="flex items-center gap-8 md:justify-between">
