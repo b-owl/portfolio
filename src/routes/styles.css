@@ -36,8 +36,8 @@
 }
 
 body {
-  overflow: hidden;
-  min-height: 100vh;
+  overflow-x: hidden;
+  height:auto;
   margin: 0;
   background-attachment: fixed;
   background-color: var(--color-bg-1);

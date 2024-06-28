@@ -3,7 +3,7 @@
   import { i18n } from '../../../i18n'
 </script>
 
-<header class="absolute top-0 z-10 w-full -translate-x-1/2 left-1/2">
+<header class="absolute top-0 z-50 w-full -translate-x-1/2 left-1/2">
   <nav class="flex justify-center" dir="ltr">
     <ul
       dir={$i18n.language === 'fa' ? 'rtl' : 'ltr'}

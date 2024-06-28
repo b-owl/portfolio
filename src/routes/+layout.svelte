@@ -28,7 +28,7 @@
 <div
   dir={$i18n.language === 'fa' ? 'rtl' : 'ltr'}
   data-theme={currentTheme}
-  class="app rtl:font-soltan font-robotoBold"
+  class="overflow-hidden rtl:font-soltan font-robotoBold"
 >
   <Header />
   <ContactShortcut />
@@ -40,9 +40,4 @@
 </div>
 
 <style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
 </style>
