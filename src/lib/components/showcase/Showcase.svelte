@@ -67,7 +67,7 @@
 </script>
 
 <section
-  class="mt-10 flex flex-col w-screen min-h-screen pt-10 mx-auto activeSection md:w-4/5"
+  class="scale-effect mt-10 flex flex-col w-screen min-h-screen pt-10 mx-auto activeSection md:w-4/5"
 >
   {#if delay}
     <div style="animation-delay: 1s">
@@ -148,3 +148,18 @@
     {/each}
   </div>
 </section>
+
+<style>
+  .scale-effect {
+    animation: scaleUp 0.4s ease-in-out forwards;
+  }
+
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.3);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+</style>

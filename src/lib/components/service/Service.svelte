@@ -105,7 +105,7 @@
 </script>
 
 <section
-  class="w-screen min-h-screen mx-auto md:w-4/5 flex justify-start mt-10 flex-col pt-10"
+  class="scale-effect w-screen min-h-screen mx-auto md:w-4/5 flex justify-start mt-10 flex-col pt-10"
 >
   <div>
     <div class="relative mb-10">
@@ -128,7 +128,9 @@
       <div
         class="relative w-10 h-1 left-2/4 -translate-x-2/4 rtl:-left-2/4 rtl:translate-x-2/4 bg-base-100"
       >
-        <span class="absolute rounded-full rtl:mx-0 rtl:left-2 w-2 h-1 mx-2 bg-accent" />
+        <span
+          class="absolute rounded-full rtl:mx-0 rtl:left-2 w-2 h-1 mx-2 bg-accent"
+        />
         <span
           class="absolute rounded-full rtl:mx-0 rtl:left-6 left-4 w-2 h-1 mx-2 bg-accent"
         />
@@ -160,3 +162,18 @@
     {/each}
   </swiper-container>
 </section>
+
+<style>
+  .scale-effect {
+    animation: scaleUp 0.4s ease-in-out forwards;
+  }
+
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.3);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+</style>

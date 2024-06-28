@@ -2,6 +2,7 @@
   import { setupContact } from './Contact'
   import { ContactPic } from '$lib/assets/dummy'
   import { i18n } from '../../../i18n'
+  import { fly } from 'svelte/transition'
 
   const { AlertClassname, LoadingClassname, form, sendEmail } = setupContact()
 </script>
@@ -13,7 +14,12 @@
     <div
       class="bg-secondary absolute bottom-0 left-0 w-full h-full rounded-lg opacity-20"
     />
-    <img class="z-20 w-full h-full" src={ContactPic} alt="" />
+    <img
+      in:fly={{ x: -200, duration: 400 }}
+      class="z-20 w-full h-full"
+      src={ContactPic}
+      alt=""
+    />
   </div>
 
   <div class="basis-full lg:basis-2/3 h-full mt-8">
