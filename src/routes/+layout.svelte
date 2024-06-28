@@ -5,7 +5,7 @@
   import Header from '$lib/components/common/Header.svelte'
   import ContactShortcut from '$lib/components/common/ContactShortcut.svelte'
   import Settings from '$lib/components/common/Settings.svelte'
-  import { settingsStore } from '$lib/store'
+  import { settingsStore } from '$lib/stores/store'
 
   let currentTheme: string
   let currentLang: string

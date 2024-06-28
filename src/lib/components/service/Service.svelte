@@ -126,11 +126,11 @@
     </h1>
     <div class="bg-secondary w-3/5 md:w-2/5 mx-auto h-1">
       <div
-        class="relative w-10 h-1 left-2/4 -translate-x-2/4 rtl:-left-2/4 rtl:translate-x-2/4"
+        class="relative w-10 h-1 left-2/4 -translate-x-2/4 rtl:-left-2/4 rtl:translate-x-2/4 bg-base-100"
       >
-        <span class="absolute rounded-full rtl:mx-0 rtl:left-2 w-2 h-1 mx-2" />
+        <span class="absolute rounded-full rtl:mx-0 rtl:left-2 w-2 h-1 mx-2 bg-accent" />
         <span
-          class="absolute rounded-full rtl:mx-0 rtl:left-6 left-4 w-2 h-1 mx-2"
+          class="absolute rounded-full rtl:mx-0 rtl:left-6 left-4 w-2 h-1 mx-2 bg-accent"
         />
       </div>
     </div>

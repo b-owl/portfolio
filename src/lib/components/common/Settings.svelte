@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '@iconify/svelte'
-  import { settingsStore } from '$lib/store'
+  import { settingsStore } from '$lib/stores/store'
   import { onMount } from 'svelte'
   import { i18n } from '../../../i18n/index'
 
