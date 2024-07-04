@@ -28,7 +28,7 @@
 </script>
 
 <section
-  class="relative z-10 flex items-center justify-center min-h-screen py-20 mx-auto activeSection w-full md:w-10/12 p-14 lg:p-10 md:gap-x-16"
+  class="relative z-10 flex items-center justify-center w-full py-20 mx-auto min-h-auto activeSection md:w-10/12 p-14 lg:p-10 md:gap-x-16 lg:h-screen"
 >
   <div class="hidden h-92 xl:block basis-1/3">
     <div
@@ -53,7 +53,7 @@
 
     <div class="flex flex-col items-start">
       <h1
-        class="mt-10 mb-5 text-2xl md:text-3xl lg:text-4xl font-semibold rtl:font-casablanca"
+        class="mt-10 mb-5 text-2xl font-semibold md:text-3xl lg:text-4xl rtl:font-casablanca"
       >
         {$i18n.t('helloName')}
       </h1>

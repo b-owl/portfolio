@@ -105,12 +105,12 @@
 </script>
 
 <section
-  class="scale-effect w-screen min-h-screen mx-auto md:w-4/5 flex justify-start mt-10 flex-col pt-10"
+  class="flex flex-col justify-start w-screen h-screen pt-20 mx-auto overflow-hidden scale-effect md:w-4/5"
 >
   <div>
     <div class="relative mb-10">
       <h3
-        class="text-xl absolute left-1/2 -translate-x-1/2 z-10 rtl:font-TitrPlus"
+        class="absolute z-10 text-xl -translate-x-1/2 left-1/2 rtl:font-TitrPlus"
       >
         {$i18n.t('skills')}
       </h3>
@@ -120,19 +120,19 @@
     </div>
 
     <h1
-      class="text-2xl md:text-4xl my-5 text-center rlt:font-casablanca ltr:font-summer"
+      class="my-5 text-2xl text-center md:text-4xl rlt:font-casablanca ltr:font-summer"
     >
       {$i18n.t('seeSkills')}
     </h1>
-    <div class="bg-secondary w-3/5 md:w-2/5 mx-auto h-1">
+    <div class="w-3/5 h-1 mx-auto bg-secondary md:w-2/5">
       <div
         class="relative w-10 h-1 left-2/4 -translate-x-2/4 rtl:-left-2/4 rtl:translate-x-2/4 bg-base-100"
       >
         <span
-          class="absolute rounded-full rtl:mx-0 rtl:left-2 w-2 h-1 mx-2 bg-accent"
+          class="absolute w-2 h-1 mx-2 rounded-full rtl:mx-0 rtl:left-2 bg-accent"
         />
         <span
-          class="absolute rounded-full rtl:mx-0 rtl:left-6 left-4 w-2 h-1 mx-2 bg-accent"
+          class="absolute w-2 h-1 mx-2 rounded-full rtl:mx-0 rtl:left-6 left-4 bg-accent"
         />
       </div>
     </div>
@@ -141,20 +141,20 @@
   <swiper-container
     bind:this={swiperEl}
     init="false"
-    class="mt-20 px-10 md:px-0 h-72 w-full"
+    class="w-full px-10 mt-20 md:px-0 h-72"
     style="direction: ltr"
   >
     {#each serviceData as { icon, skill, description }}
       <swiper-slide>
         <div
-          class="item hover:bg-accent/30 border-2 p-3 w-full h-60 flex flex-col gap-y-4 hover:cursor-grab rounded-md"
+          class="flex flex-col w-full p-3 border-2 rounded-md item hover:bg-accent/30 h-60 gap-y-4 hover:cursor-grab"
           style="direction: {$i18n.language === 'fa' ? 'rtl' : 'ltr'}"
         >
           <h2 class="text-xl">
             <Icon {icon} />
           </h2>
           <h3 class="text-xl font-summer">{skill}</h3>
-          <p class="description text-sm text-gray-500">
+          <p class="text-sm text-gray-500 description">
             {description}
           </p>
         </div>

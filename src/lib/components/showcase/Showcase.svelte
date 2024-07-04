@@ -67,13 +67,13 @@
 </script>
 
 <section
-  class="scale-effect mt-10 flex flex-col w-screen min-h-screen pt-10 mx-auto activeSection md:w-4/5"
+  class="flex flex-col w-screen min-h-screen pt-20 mx-auto scale-effect activeSection md:w-4/5"
 >
   {#if delay}
     <div style="animation-delay: 1s">
       <div class="relative mb-10">
         <h3
-          class="rtl:font-TitrPlus absolute z-10 text-xl -translate-x-1/2 left-1/2"
+          class="absolute z-10 text-xl -translate-x-1/2 rtl:font-TitrPlus left-1/2"
         >
           {$i18n.t('projects')}
         </h3>
@@ -87,12 +87,12 @@
       >
         {$i18n.t('seeProjects')}
       </h1>
-      <div class="bg-secondary w-3/5 h-1 mx-auto md:w-2/5">
+      <div class="w-3/5 h-1 mx-auto bg-secondary md:w-2/5">
         <div
           class="relative w-10 h-1 bg-base-100 left-2/4 -translate-x-2/4 rtl:translate-x-2/4 rtl:-left-2/4"
         >
-          <span class="absolute w-2 h-1 bg-accent rounded-full left-2"></span>
-          <span class="absolute w-2 h-1 bg-accent rounded-full left-6"></span>
+          <span class="absolute w-2 h-1 rounded-full bg-accent left-2"></span>
+          <span class="absolute w-2 h-1 rounded-full bg-accent left-6"></span>
         </div>
       </div>
     </div>

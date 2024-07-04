@@ -6,9 +6,13 @@
   import ContactShortcut from '$lib/components/common/ContactShortcut.svelte'
   import Settings from '$lib/components/common/Settings.svelte'
   import { settingsStore } from '$lib/stores/store'
+  import { i18n } from '../i18n/index'
+  import { writable } from 'svelte/store'
+  import Loading from '$lib/components/Loading.svelte'
 
   let currentTheme: string
   let currentLang: string
+  let isLoading = writable(true)
 
   onMount(() => {
     settingsStore.subscribe(({ currentTheme: theme, currentLang: lang }) => {
@@ -17,26 +21,30 @@
     })
     currentTheme = localStorage.getItem('currentTheme') || ''
     currentLang = localStorage.getItem('currentLang') || ''
-  })
-  import { i18n } from '../i18n/index'
-</script>
 
-<!-- <svelte:head>
-  <html lang={$i18n.language} />
-</svelte:head> -->
+    setTimeout(() => {
+      isLoading.set(false)
+    }, 1000)
+  })
+</script>
 
 <div
   dir={$i18n.language === 'fa' ? 'rtl' : 'ltr'}
+  lang={$i18n.language}
   data-theme={currentTheme}
   class="overflow-hidden rtl:font-soltan font-robotoBold"
 >
-  <Header />
-  <ContactShortcut />
-  <Settings />
+  {#if $isLoading}
+    <Loading />
+  {:else}
+    <Header />
+    <ContactShortcut />
+    <Settings />
 
-  <main>
-    <slot />
-  </main>
+    <main>
+      <slot />
+    </main>
+  {/if}
 </div>
 
 <style>

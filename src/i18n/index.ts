@@ -14,7 +14,7 @@ i18next.init({
         navItem5: 'Contact',
         followMe: 'Follow Me',
         myName: 'I am Mehdi Keramati',
-        im: "I'm",
+        im: "I'm ",
         frontEnd: 'a FrontEnd Developer',
         designer: 'a Designer',
         webdev: 'a Web Developer',

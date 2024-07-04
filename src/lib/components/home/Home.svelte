@@ -6,7 +6,7 @@
   import { fly } from 'svelte/transition'
   import { i18n } from '../../../i18n'
 
-  let iconsLoaded: Writable<boolean> = writable(true)
+  let iconsLoaded: Writable<boolean> = writable(false)
 
   const skills = derived(i18n, $i18n => [
     $i18n.t('webdev'),
@@ -117,16 +117,16 @@
   }
 
   onMount(() => {
-    setTimeout(() => {
-      iconsLoaded.set(false)
-      typewriter()
-    }, 100)
+    typewriter()
     updateSnowflakes()
+    // setTimeout(() => {
+    //   iconsLoaded.set(false)
+    // }, 100)
   })
 </script>
 
 <div
-  class="flex flex-col items-start justify-center w-full h-screen p-10 overflow-hidden activeSection md:pl-48 md:pr-48 gap-14"
+  class="flex flex-col items-start justify-center w-full p-10 overflow-hidden activeSection md:pl-48 md:pr-48 gap-14"
 >
   <div class="snowframe" aria-hidden="true">
     {#each snowflakes as flake}
@@ -205,8 +205,8 @@
       </a>
     </div>
     <div
-      in:fly={{ y: 200, duration: 1000 }}
-      class="absolute hidden w-2/5 me lg:bottom-0 ltr:right-32 rtl:left-32"
+      id="img-animate-effect"
+      class="fixed hidden w-2/5 me lg:bottom-0 ltr:right-32 rtl:left-32"
     >
       <img src={MePic} alt="me" />
     </div>
@@ -214,6 +214,18 @@
 </div>
 
 <style>
+  #img-animate-effect {
+    animation: scaleUp 0.4s ease-in-out forwards;
+  }
+
+  @keyframes scaleUp {
+    from {
+      transform: translateY(20rem);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
   .clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   }
