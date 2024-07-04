@@ -1,4 +1,5 @@
 export interface PortfolioTitleType {
+  gern: string
   name: string
   activetab: boolean[]
 }

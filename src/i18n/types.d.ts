@@ -95,6 +95,7 @@ declare module 'i18next' {
         changeLang: string
         en: string
         fa: string
+        de: string
         themeColors: string
         messageSended: string
         loading: string

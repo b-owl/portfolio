@@ -6,22 +6,27 @@ import type {
 export function getPortfolioTitle(i18n: any): PortfolioTitleType[] {
   return [
     {
+      gern: 'All',
       name: i18n.t('all'),
       activetab: [true, false, false, false, false],
     },
     {
+      gern: 'App',
       name: i18n.t('app'),
       activetab: [false, true, false, false, false],
     },
     {
+      gern: 'Templates',
       name: i18n.t('templates'),
       activetab: [false, false, true, false, false],
     },
     {
+      gern: 'Games',
       name: i18n.t('games'),
       activetab: [false, false, false, true, false],
     },
     {
+      gern: 'GraphicDesign',
       name: i18n.t('graphicDesign'),
       activetab: [false, false, false, false, true],
     },

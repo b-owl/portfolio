@@ -175,15 +175,17 @@
       />
     </div>
 
-    <h1
-      class="p-2 text-3xl font-semibold md:text-4xl lg:text-5xl ltr:font-summer"
-    >
-      {$i18n.t('im')}{' '}
-      <span class="titleSkills">
-        {currentSkill}
-      </span>
-      <span class="cursor">|</span>
-    </h1>
+    <div class="w-2/3">
+      <h1
+        class="inline-block p-2 text-3xl font-semibold md:text-4xl lg:text-5xl ltr:font-summer"
+      >
+        {$i18n.t('im')}{' '}
+        <span class="titleSkills">
+          {currentSkill}
+        </span>
+        <span class="cursor">|</span>
+      </h1>
+    </div>
 
     <div class="flex items-center justify-center font-semibold gap-x-5">
       <button

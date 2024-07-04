@@ -28,23 +28,20 @@
   let activeTab: boolean[] = [true, false, false, false, false]
 
   $: {
-    if (gern === 'All' || gern === 'همه') {
+    if (gern === 'All') {
       work = portfolioData[0]?.all
-    } else if (gern === 'App' || gern === 'اپلیکیشن') {
+    } else if (gern === 'App') {
       work = portfolioData[0].app
-    } else if (gern === 'Templates' || gern === 'قالب') {
+    } else if (gern === 'Templates') {
       template = true
-      if (templateGern === 'ReactJS' || templateGern === 'ری اکت') {
+      if (templateGern === 'ReactJS') {
         work = portfolioData[0].templates[0].react
-      } else if (
-        templateGern === 'VanillaJS' ||
-        templateGern === 'جاوااسکریپت'
-      ) {
+      } else if (templateGern === 'VanillaJS') {
         work = portfolioData[0].templates[0].vanillaJS
       }
-    } else if (gern === 'Games' || gern === 'بازی') {
+    } else if (gern === 'Games') {
       work = portfolioData[0].games
-    } else if (gern === 'GraphicDesign' || gern === 'طراحی') {
+    } else if (gern === 'GraphicDesign') {
       work = portfolioData[0].graphicDesign
     }
   }
@@ -102,13 +99,13 @@
     style="animation-delay: 1s"
     class="flex items-center justify-center w-3/4 h-20 gap-2 mx-auto mt-10 text-xs text-center md:gap-4 md:text-md"
   >
-    {#each portfolioTitle as { name, activetab }, idx}
+    {#each portfolioTitle as { gern, name, activetab }, idx}
       <button
         type="button"
         class={`
            ${activeTab[idx] ? 'bg-secondary' : ''}
            p-2 py-1 mb-10 font-semibold md:p-4 md:py-2 rounded-2xl`}
-        on:click={() => setGernAndTab(name, activetab)}
+        on:click={() => setGernAndTab(gern, activetab)}
       >
         {name}
       </button>

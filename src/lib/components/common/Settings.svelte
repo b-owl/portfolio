@@ -3,7 +3,7 @@
   import { settingsStore } from '$lib/stores/store'
   import { onMount } from 'svelte'
   import { i18n } from '../../../i18n/index'
-  import { EnFlag, IrFlag } from '$lib/assets/dummy'
+  import { EnFlag, IrFlag, DeFlag } from '$lib/assets/dummy'
 
   let currentTheme: string
   let currentLang: string
@@ -64,6 +64,11 @@
       code: 'fa',
       name: $i18n.t('fa'),
       flagsrc: IrFlag,
+    },
+    {
+      code: 'de',
+      name: $i18n.t('de'),
+      flagsrc: DeFlag,
     },
   ]
 
