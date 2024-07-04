@@ -147,7 +147,7 @@
     {#each serviceData as { icon, skill, description }}
       <swiper-slide>
         <div
-          class="flex flex-col w-full p-3 border-2 rounded-md item hover:bg-accent/30 h-60 gap-y-4 hover:cursor-grab"
+          class="flex flex-col w-full p-3 border rounded-md border-base-300 item hover:bg-accent/30 h-60 gap-y-4 hover:cursor-grab"
           style="direction: {$i18n.language === 'fa' ? 'rtl' : 'ltr'}"
         >
           <h2 class="text-xl">

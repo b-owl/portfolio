@@ -6,7 +6,7 @@ module.exports = {
   content: ['./src/**/*.{html,svelte,js,ts}'],
   darkMode: 'class',
   daisyui: {
-    themes: ['light', 'dark', 'cupcake', 'sunset', 'night', 'dim'],
+    themes: ['nord', 'retro', 'sunset', 'night', 'dim', 'bussiness'],
   },
   theme: {
     extend: {
@@ -66,7 +66,8 @@ module.exports = {
         videograph: "url('$lib/assets/images/videograph.png')",
         eCommerceTemplate: "url('$lib/assets/images/eCommerceTemplate.png')",
         littleProject: "url('$lib/assets/images/littleProject.png')",
-        legends_landingpage: "url('$lib/assets/images/legends_landingpage.png')",
+        legends_landingpage:
+          "url('$lib/assets/images/legends_landingpage.png')",
         SomeGames: "url('$lib/assets/images/SomeGames.png')",
         covid19: "url('$lib/assets/images/covid19.png')",
       },

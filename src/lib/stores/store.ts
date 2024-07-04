@@ -3,18 +3,18 @@ import { writable } from 'svelte/store'
 
 function createSettingsStore() {
   const { subscribe, update } = writable({
-    currentTheme: 'light' as 'light' | 'dark' | 'night',
-    currentLang: 'en' as 'en' | 'fa',
+    currentTheme: 'night' as string,
+    currentLang: 'en' as string,
     settings: false,
   })
 
   return {
     subscribe,
-    setTheme: (theme: 'light' | 'dark' | 'night') => {
+    setTheme: (theme: string) => {
       update(s => ({ ...s, currentTheme: theme }))
       localStorage.setItem('currentTheme', theme)
     },
-    setLang: (lang: 'en' | 'fa') => {
+    setLang: (lang: string) => {
       update(s => ({ ...s, currentLang: lang }))
       localStorage.setItem('currentLang', lang)
     },

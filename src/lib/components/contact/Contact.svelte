@@ -10,9 +10,9 @@
 <section
   class="flex items-center justify-center min-h-screen p-10 py-20 mx-auto activeSection lg:w-4/5 md:p-20 lg:p-10 md:gap-x-16"
 >
-  <div class="z-10 rounded-md relative hidden lg:block lg:basis-1/3 h-92">
+  <div class="relative z-10 hidden rounded-md lg:block lg:basis-1/3 h-92">
     <div
-      class="bg-secondary absolute bottom-0 left-0 w-full h-full rounded-lg opacity-20"
+      class="absolute bottom-0 left-0 w-full h-full rounded-lg bg-secondary opacity-20"
     />
     <img
       in:fly={{ x: -200, duration: 400 }}
@@ -22,8 +22,8 @@
     />
   </div>
 
-  <div class="basis-full lg:basis-2/3 h-full mt-8">
-    <div class="w-full h-full flex items-start flex-col">
+  <div class="h-full mt-8 basis-full lg:basis-2/3">
+    <div class="flex flex-col items-start w-full h-full">
       <div class="relative w-full">
         <h2
           class="absolute z-10 text-xl rtl:font-semibold rtl:font-TitrPlus ltr:font-summer"
@@ -31,7 +31,7 @@
           {$i18n.t('contact')}
         </h2>
         <span
-          class="bg-secondary absolute w-10 h-10 rounded-full rtl:-right-4 -left-4 -top-2"
+          class="absolute w-10 h-10 rounded-full bg-secondary rtl:-right-4 -left-4 -top-2"
         />
       </div>
 
@@ -40,7 +40,7 @@
       >
         {$i18n.t('getInTouch')}
       </h1>
-      <div class="bg-secondary w-20 h-1 m-2 mb-4" />
+      <div class="w-20 h-1 m-2 mb-4 bg-secondary" />
       <p class="text-sm text-base-content">{$i18n.t('contactDescription')}</p>
     </div>
 
@@ -54,7 +54,7 @@
 
     <form bind:this={$form} on:submit={sendEmail}>
       <div class="flex flex-col w-full gap-3 my-10 md:flex-row">
-        <div class="relative h-10 md:basis-2/4 border rounded-md">
+        <div class="relative h-10 border rounded-md md:basis-2/4 border-base-300">
           <label
             class="px-2 rtl:px-5 flex items-center justify-center ltr:font-summer rtl:right-4 rtl:w-4 absolute left-4 -top-2.5 bg-base-100 rtl:font-semibold text-sm"
             for="name"
@@ -69,7 +69,7 @@
             required
           />
         </div>
-        <div class="relative h-10 md:basis-2/4 border rounded-md">
+        <div class="relative h-10 border rounded-md md:basis-2/4 border-base-300">
           <label
             class="px-2 rtl:px-5 flex items-center justify-center ltr:font-summer rtl:right-4 rtl:w-4 absolute left-4 -top-2.5 bg-base-100 rtl:font-semibold text-sm"
             for="email"
@@ -93,8 +93,8 @@
         </label>
         <textarea
           name="message"
-          class="w-full p-4 bg-transparent resize-y h-36 border rounded-md"
-          id="textarea"
+          class="w-full p-4 bg-transparent border rounded-md resize-y border-base-300 h-36"
+          id="textarea" 
           cols="30"
           rows="10"
         />
@@ -102,7 +102,7 @@
 
       <button
         type="submit"
-        class="btn btn-outline mt-4 font-semibold cursor-pointer"
+        class="mt-4 font-semibold cursor-pointer btn btn-outline border-base-300"
       >
         {#if $LoadingClassname}
           <span class={$LoadingClassname} />
