@@ -8,42 +8,92 @@
     {
       skill: $i18n.t('html'),
       description: $i18n.t('htmlDescription'),
-      icon: 'ph:house',
+      icon: 'vscode-icons:file-type-html',
     },
     {
       skill: $i18n.t('css'),
       description: $i18n.t('cssDescription'),
-      icon: 'ph:house',
-    },
-    {
-      skill: $i18n.t('js'),
-      description: $i18n.t('jsDescription'),
-      icon: 'ph:house',
-    },
-    {
-      skill: $i18n.t('react'),
-      description: $i18n.t('reactDescription'),
-      icon: 'ph:house',
+      icon: 'vscode-icons:file-type-css',
     },
     {
       skill: $i18n.t('sass'),
       description: $i18n.t('sassDescription'),
-      icon: 'ph:house',
+      icon: 'vscode-icons:file-type-scss2',
+    },
+    {
+      skill: $i18n.t('js'),
+      description: $i18n.t('jsDescription'),
+      icon: 'vscode-icons:file-type-js-official',
+    },
+    {
+      skill: $i18n.t('react'),
+      description: $i18n.t('reactDescription'),
+      icon: 'logos:react',
     },
     {
       skill: $i18n.t('tailwind'),
       description: $i18n.t('tailwindDescription'),
-      icon: 'ph:house',
+      icon: 'logos:tailwindcss-icon',
     },
     {
       skill: $i18n.t('bootstrap'),
       description: $i18n.t('bootstrapDescription'),
-      icon: 'ph:house',
+      icon: 'devicon:bootstrap',
     },
     {
-      skill: $i18n.t('photoshop'),
-      description: $i18n.t('photoshopDescription'),
-      icon: 'ph:house',
+      skill: $i18n.t('mui'),
+      description: $i18n.t('muiDescription'),
+      icon: 'logos:material-ui',
+    },
+    {
+      skill: $i18n.t('svelte'),
+      description: $i18n.t('svelteDescription'),
+      icon: 'devicon:svelte',
+    },
+    {
+      skill: $i18n.t('testingTools'),
+      description: $i18n.t('testingToolsDescription'),
+      icon: 'vscode-icons:folder-type-test-opened',
+    },
+    {
+      skill: $i18n.t('typescript'),
+      description: $i18n.t('typescriptDescription'),
+      icon: 'vscode-icons:file-type-typescript',
+    },
+    {
+      skill: $i18n.t('webpack'),
+      description: $i18n.t('webpackDescription'),
+      icon: 'devicon:webpack',
+    },
+    {
+      skill: $i18n.t('git'),
+      description: $i18n.t('gitDescription'),
+      icon: 'devicon:git',
+    },
+    {
+      skill: $i18n.t('redux'),
+      description: $i18n.t('reduxDescription'),
+      icon: 'devicon:redux',
+    },
+    {
+      skill: $i18n.t('graphql'),
+      description: $i18n.t('graphqlDescription'),
+      icon: 'logos:graphql',
+    },
+    {
+      skill: $i18n.t('nodejs'),
+      description: $i18n.t('nodejsDescription'),
+      icon: 'logos:nodejs-icon',
+    },
+    {
+      skill: $i18n.t('restapi'),
+      description: $i18n.t('restapiDescription'),
+      icon: 'vscode-icons:file-type-apib',
+    },
+    {
+      skill: $i18n.t('astro'),
+      description: $i18n.t('astroDescription'),
+      icon: 'skill-icons:astro',
     },
   ]
 
@@ -64,16 +114,13 @@
         `
       .swiper-pagination-bullet {
            background-color: transparent;
-           border: 1px solid ;
+           border: 1px solid;
            opacity: 1;
            width: 10px;
            height: 10px;
        }
        .swiper-pagination-bullet-active {
            background-color: aqua !important;
-           box-shadow:
-             0 0 0.5rem aqua,
-             0 0 1rem aqua;
         }
       `,
       ],
@@ -120,7 +167,7 @@
     </div>
 
     <h1
-      class="my-5 text-2xl text-center md:text-4xl rlt:font-casablanca ltr:font-summer"
+      class="my-5 text-2xl text-center md:text-4xl ltr:font-summer rtl:font-casablanca"
     >
       {$i18n.t('seeSkills')}
     </h1>
@@ -139,22 +186,28 @@
   </div>
 
   <swiper-container
+    pagination="true"
+    pagination-dynamic-bullets="true"
+    effect="coverflow"
+    coverflow-effect-depth="10"
+    coverflow-effect-slide-shadows="false"
+    centered-slides="true"
     bind:this={swiperEl}
     init="false"
-    class="w-full px-10 mt-20 md:px-0 h-72"
+    class="w-full px-10 mt-10 md:px-0 h-[20rem] pt-6"
     style="direction: ltr"
   >
     {#each serviceData as { icon, skill, description }}
       <swiper-slide>
         <div
-          class="flex flex-col w-full p-3 border rounded-md border-base-300 item hover:bg-accent/30 h-60 gap-y-4 hover:cursor-grab"
+          class="flex flex-col w-full p-3 mt-4 rounded-md glass card item hover:bg-base-300 h-60 gap-y-4 hover:cursor-grab"
           style="direction: {$i18n.language === 'fa' ? 'rtl' : 'ltr'}"
         >
           <h2 class="text-xl">
             <Icon {icon} />
           </h2>
           <h3 class="text-xl font-summer">{skill}</h3>
-          <p class="text-sm text-gray-500 description">
+          <p class="text-sm opacity-60 description">
             {description}
           </p>
         </div>

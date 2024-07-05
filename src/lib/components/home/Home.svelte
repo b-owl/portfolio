@@ -3,7 +3,6 @@
   import { MePic } from '$lib/assets/dummy'
   import CVfile from '$lib/assets/cv.pdf'
   import { derived, writable, type Writable } from 'svelte/store'
-  import { fly } from 'svelte/transition'
   import { i18n } from '../../../i18n'
 
   let iconsLoaded: Writable<boolean> = writable(false)
@@ -11,7 +10,7 @@
   const skills = derived(i18n, $i18n => [
     $i18n.t('webdev'),
     $i18n.t('frontEnd'),
-    $i18n.t('designer'),
+    $i18n.t('goal'),
   ])
   let currentSkillIndex: number = 0
   let currentSkill: string = ''
@@ -40,7 +39,7 @@
   // Typewriter effect
 
   async function typewriter(): Promise<void> {
-    const currentSkills = $skills // Get the current value of the skills store
+    const currentSkills = $skills
     const skill = currentSkills[currentSkillIndex]
 
     if (!isDeleting && currentSkill === skill) {
@@ -171,7 +170,7 @@
         {$i18n.t('myName')}
       </h2>
       <span
-        class="absolute w-10 h-10 rounded-full bg-secondary rtl:-right-3 rtl:-top-3 -left-4 -top-2"
+        class="absolute w-10 h-10 rounded-full glass bg-secondary rtl:-right-3 rtl:-top-3 -left-4 -top-2"
       />
     </div>
 
@@ -179,7 +178,6 @@
       <h1
         class="inline-block p-2 text-3xl font-semibold md:text-4xl lg:text-5xl ltr:font-summer"
       >
-        {$i18n.t('im')}{' '}
         <span class="titleSkills">
           {currentSkill}
         </span>

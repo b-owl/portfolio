@@ -13,7 +13,7 @@ declare module 'i18next' {
         myName: string
         im: string
         frontEnd: string
-        designer: string
+        goal: string
         webdev: string
         readMore: string
         welcome: string
@@ -44,8 +44,29 @@ declare module 'i18next' {
         tailwindDescription: string
         bootstrap: string
         bootstrapDescription: string
-        photoshop: string
-        photoshopDescription: string
+        mui: string
+        muiDescription: string
+        svelte: string
+        svelteDescription: string
+        testingTools: string
+        testingToolsDescription: string
+        typescript: string
+        typescriptDescription: string
+        webpack: string
+        webpackDescription: string
+        git: string
+        gitDescription: string
+        redux: string
+        reduxDescription: string
+        graphql: string
+        graphqlDescription: string
+        nodejs: string
+        nodejsDescription: string
+        restapi: string
+        restapiDescription: string
+        restapiDescription: string
+        astro: string
+        astroDescription: string
         projects: string
         seeProjects: string
         all: string

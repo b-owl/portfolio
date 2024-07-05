@@ -80,7 +80,7 @@
       </div>
 
       <h1
-        class="my-5 text-2xl text-center md:text-4xl rlt:font-casablanca ltr:font-summer"
+        class="my-5 text-2xl text-center md:text-4xl ltr:font-summer rtl:font-casablanca"
       >
         {$i18n.t('seeProjects')}
       </h1>

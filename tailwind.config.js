@@ -6,7 +6,7 @@ module.exports = {
   content: ['./src/**/*.{html,svelte,js,ts}'],
   darkMode: 'class',
   daisyui: {
-    themes: ['nord', 'retro', 'sunset', 'night', 'dim', 'bussiness'],
+    themes: ['nord', 'retro', 'sunset', 'night', 'dim', 'business'],
   },
   theme: {
     extend: {

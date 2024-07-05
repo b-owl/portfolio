@@ -54,7 +54,7 @@
 
     <form bind:this={$form} on:submit={sendEmail}>
       <div class="flex flex-col w-full gap-3 my-10 md:flex-row">
-        <div class="relative h-10 border rounded-md md:basis-2/4 border-base-300">
+        <div class="relative h-10 rounded-md md:basis-2/4">
           <label
             class="px-2 rtl:px-5 flex items-center justify-center ltr:font-summer rtl:right-4 rtl:w-4 absolute left-4 -top-2.5 bg-base-100 rtl:font-semibold text-sm"
             for="name"
@@ -63,13 +63,13 @@
           </label>
           <input
             name="user_name"
-            class="w-full h-full p-4 text-red-400 bg-transparent valid:text-green-400"
+            class="w-full h-full p-4 text-red-400 bg-transparent input input-bordered valid:text-green-400"
             id="name"
             type="text"
             required
           />
         </div>
-        <div class="relative h-10 border rounded-md md:basis-2/4 border-base-300">
+        <div class="relative h-10 rounded-md md:basis-2/4">
           <label
             class="px-2 rtl:px-5 flex items-center justify-center ltr:font-summer rtl:right-4 rtl:w-4 absolute left-4 -top-2.5 bg-base-100 rtl:font-semibold text-sm"
             for="email"
@@ -78,7 +78,7 @@
           </label>
           <input
             name="user_email"
-            class="w-full h-full p-4 text-red-400 bg-transparent valid:text-green-400"
+            class="w-full h-full p-4 text-red-400 bg-transparent input input-bordered valid:text-green-400"
             type="email"
             required
           />
@@ -93,7 +93,7 @@
         </label>
         <textarea
           name="message"
-          class="w-full p-4 bg-transparent border rounded-md resize-y border-base-300 h-36"
+          class="w-full p-4 bg-transparent rounded-md resize-y input input-bordered h-36"
           id="textarea" 
           cols="30"
           rows="10"
@@ -102,7 +102,7 @@
 
       <button
         type="submit"
-        class="mt-4 font-semibold cursor-pointer btn btn-outline border-base-300"
+        class="mt-4 font-semibold cursor-pointer btn btn-outline"
       >
         {#if $LoadingClassname}
           <span class={$LoadingClassname} />

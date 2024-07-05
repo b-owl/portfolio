@@ -7,53 +7,84 @@ export const enTranslation = {
   followMe: 'Follow Me',
   myName: 'I am Mehdi Keramati',
   im: "I'm ",
-  frontEnd: 'a FrontEnd Developer',
-  designer: 'a Designer',
-  webdev: 'a Web Developer',
+  frontEnd: "I'm a FrontEnd Developer",
+  goal: 'I driven by ambitious goals',
+  webdev: "I'm a Web Developer",
   readMore: 'Download CV',
   welcome: 'Welcome',
   about: 'ABOUT',
   helloName: "Howdy, i'm Mehdi Keramati",
   AboutDescreption:
-    "i'm FrontEnd web Developer and photoshop designer , 18 years old from northwest of Persia.",
+    "I'm a Frontend Web Developer passionate about crafting innovative digital experiences. I blend technical expertise with creativity to build user-friendly, visually stunning websites that engage and inspire.",
   aboutSkills1: 'Frontend developer',
   aboutSkills1Description1:
-    'A front-end developer builds the front-end portion of websites and web applications—that is, the part that users actually see and interact with.',
+    'I craft engaging user interfaces for websites and web applications.',
   aboutSkills2: 'Web Development',
   aboutSkills1Description2:
-    "Web developers create and maintain websites. They are also responsible for the site's technical aspects.",
-  aboutSkills3: 'Wordpress CMS',
+    'My passion lies in bringing digital ideas to life through code.',
+  aboutSkills3: 'problem solving',
   aboutSkills1Description3:
-    'WordPress is an open-source content management system (CMS) software used to build, modify, and maintain websites',
-  aboutSkills5: 'Graphic Designer.',
+    'I thrive on tackling complex challenges and finding innovative solutions.',
+  aboutSkills5: 'curious',
   aboutSkills1Description5:
-    'Photoshop artists are called graphic designers. They use Photoshop to create graphics for websites, logos, and illustrations.',
+    'My drive to learn keeps me exploring new technologies and ideas.',
   skills: 'SKILLS',
   seeSkills: "Let's See My Skills",
   html: 'HTML',
   htmlDescription:
     'HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating Web pages',
-  css: 'Css',
+  css: 'CSS',
   cssDescription:
-    'CSS (Cascading Style Sheets) is used to style and layout web pages ',
+    'CSS (Cascading Style Sheets) is used to style and layout web pages',
   sass: 'Sass',
   sassDescription:
-    ' SCSS (or Sass) offers a way to write styles for websites with more enhanced CSS syntax',
+    'SCSS (or Sass) offers a way to write styles for websites with more enhanced CSS syntax',
   js: 'JS',
   jsDescription:
-    "JavaScript is a dynamic programming language that's used for web development, in web applications, for game development etc",
+    "JavaScript is a dynamic programming language that's used for web development, in web applications, for game development, etc.",
   react: 'React',
   reactDescription:
-    'The React. js framework is an open-source JavaScript framework and library developed by Facebook',
+    'React.js is an open-source JavaScript framework and library developed by Facebook for building user interfaces',
   tailwind: 'Tailwind',
   tailwindDescription:
-    'Tailwind CSS is a low-level framework. Meaning, unlike other CSS frameworks like Bootstrap and Materialize',
+    'Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces',
   bootstrap: 'Bootstrap',
   bootstrapDescription:
-    'Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development',
-  photoshop: 'Photoshop',
-  photoshopDescription:
-    'Photoshop is software that offers a virtually limitless opportunity to create digital art etc...',
+    'Bootstrap is a popular CSS framework for developing responsive and mobile-first websites',
+  mui: 'Material-UI',
+  muiDescription:
+    "Material-UI is a popular React UI framework that implements Google's Material Design",
+  svelte: 'Svelte',
+  svelteDescription:
+    'Svelte is a radical new approach to building user interfaces, compiling your code to tiny, framework-less vanilla JS',
+  testingTools: 'Testing Tools',
+  testingToolsDescription:
+    'Tools like Jest, React Testing Library, and Cypress for ensuring code quality and functionality',
+  typescript: 'TypeScript',
+  typescriptDescription:
+    'TypeScript is a typed superset of JavaScript that compiles to plain JavaScript',
+  webpack: 'Webpack',
+  webpackDescription:
+    'Webpack is a static module bundler for modern JavaScript applications',
+  git: 'Git',
+  gitDescription:
+    'Git is a distributed version control system for tracking changes in source code during software development',
+  redux: 'Redux',
+  reduxDescription:
+    'Redux is a predictable state container for JavaScript apps, often used with React',
+  graphql: 'GraphQL',
+  graphqlDescription:
+    'GraphQL is a query language for APIs and a runtime for executing those queries with your existing data',
+  nodejs: 'Node.js',
+  nodejsDescription:
+    "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, often used for backend development",
+  restapi: 'REST API',
+  restapiDescription:
+    'REST (Representational State Transfer) is an architectural style for designing networked applications',
+
+  astro: 'Astro',
+  astroDescription:
+    'Astro is a modern static site builder that delivers lightning-fast performance by shipping zero JavaScript by default',
   projects: 'PROJECTS',
   seeProjects: "Let's See My Project",
   all: 'All',

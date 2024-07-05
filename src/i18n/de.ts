@@ -6,54 +6,85 @@ export const deTranslation = {
   navItem5: 'Kontakt',
   followMe: 'Folge mir',
   myName: 'Ich bin Mehdi Keramati',
-  im: "Ich bin ",
-  frontEnd: 'ein FrontEnd-Entwickler',
-  designer: 'ein Designer',
-  webdev: 'ein Webentwickler',
+  im: 'Ich bin ',
+  frontEnd: 'Ich bin ein FrontEnd-Entwickler',
+  goal: 'Ich werde von ehrgeizigen Zielen angetrieben',
+  webdev: 'Ich bin ein Webentwickler',
   readMore: 'Lebenslauf herunterladen',
   welcome: 'Willkommen',
   about: 'ÜBER MICH',
-  helloName: "Hallo, ich bin Mehdi Keramati",
+  helloName: 'Hallo, ich bin Mehdi Keramati',
   AboutDescreption:
-    "Ich bin ein FrontEnd-Webentwickler und Photoshop-Designer, 18 Jahre alt, aus dem Nordwesten Persiens.",
+    'Ich bin ein Frontend-Webentwickler mit Leidenschaft für die Gestaltung innovativer digitaler Erlebnisse. Ich verbinde technisches Fachwissen mit Kreativität, um benutzerfreundliche, visuell beeindruckende Websites zu erstellen, die fesseln und inspirieren.',
   aboutSkills1: 'Frontend-Entwickler',
   aboutSkills1Description1:
-    'Ein Frontend-Entwickler erstellt den Frontend-Teil von Websites und Webanwendungen, also den Teil, den Benutzer tatsächlich sehen und mit dem sie interagieren.',
+    'Ich gestalte ansprechende Benutzeroberflächen für Websites und Webanwendungen.',
   aboutSkills2: 'Webentwicklung',
   aboutSkills1Description2:
-    'Webentwickler erstellen und pflegen Websites. Sie sind auch für die technischen Aspekte der Website verantwortlich.',
-  aboutSkills3: 'WordPress CMS',
+    'Meine Leidenschaft liegt darin, digitale Ideen durch Code zum Leben zu erwecken.',
+  aboutSkills3: 'Problemlösung',
   aboutSkills1Description3:
-    'WordPress ist eine Open-Source-Content-Management-System (CMS) Software, die verwendet wird, um Websites zu erstellen, zu ändern und zu pflegen.',
-  aboutSkills5: 'Grafikdesigner',
+    'Ich blühe auf, wenn es darum geht, komplexe Herausforderungen anzugehen und innovative Lösungen zu finden.',
+  aboutSkills5: 'Neugier',
   aboutSkills1Description5:
-    'Photoshop-Künstler werden Grafikdesigner genannt. Sie verwenden Photoshop, um Grafiken für Websites, Logos und Illustrationen zu erstellen.',
+    'Mein Lerndrang treibt mich dazu an, ständig neue Technologien und Ideen zu erkunden.',
   skills: 'FÄHIGKEITEN',
   seeSkills: 'Lass uns meine Fähigkeiten sehen',
+
   html: 'HTML',
   htmlDescription:
-    'HTML steht für Hyper Text Markup Language. HTML ist die Standard-Auszeichnungssprache zur Erstellung von Webseiten.',
+    'HTML steht für Hypertext Markup Language. HTML ist die Standardauszeichnungssprache zur Erstellung von Webseiten',
   css: 'CSS',
   cssDescription:
-    'CSS (Cascading Style Sheets) wird verwendet, um Webseiten zu gestalten und zu layouten.',
+    'CSS (Cascading Style Sheets) wird verwendet, um Webseiten zu gestalten und zu layouten',
   sass: 'Sass',
   sassDescription:
-    'SCSS (oder Sass) bietet eine Möglichkeit, Styles für Websites mit einer erweiterten CSS-Syntax zu schreiben.',
+    'SCSS (oder Sass) bietet eine Möglichkeit, Stile für Websites mit erweiterter CSS-Syntax zu schreiben',
   js: 'JS',
   jsDescription:
-    'JavaScript ist eine dynamische Programmiersprache, die für die Webentwicklung, in Webanwendungen, zur Spieleentwicklung usw. verwendet wird.',
+    'JavaScript ist eine dynamische Programmiersprache, die für Webentwicklung, in Webanwendungen, für Spieleentwicklung usw. verwendet wird',
   react: 'React',
   reactDescription:
-    'Das React.js Framework ist ein Open-Source-JavaScript-Framework und eine Bibliothek, die von Facebook entwickelt wurde.',
+    'React.js ist ein Open-Source-JavaScript-Framework und eine Bibliothek, entwickelt von Facebook zum Aufbau von Benutzeroberflächen',
   tailwind: 'Tailwind',
   tailwindDescription:
-    'Tailwind CSS ist ein Low-Level-Framework. Das bedeutet, dass es im Gegensatz zu anderen CSS-Frameworks wie Bootstrap und Materialize anders funktioniert.',
+    'Tailwind CSS ist ein Utility-First-CSS-Framework zum schnellen Erstellen benutzerdefinierter Benutzeroberflächen',
   bootstrap: 'Bootstrap',
   bootstrapDescription:
-    'Bootstrap ist ein kostenloses und Open-Source-CSS-Framework, das auf responsive, mobile-first Frontend-Webentwicklung ausgerichtet ist.',
-  photoshop: 'Photoshop',
-  photoshopDescription:
-    'Photoshop ist eine Software, die nahezu unbegrenzte Möglichkeiten zur Erstellung digitaler Kunst bietet usw.',
+    'Bootstrap ist ein beliebtes CSS-Framework zur Entwicklung responsiver und mobile-first Websites',
+  mui: 'Material-UI',
+  muiDescription:
+    'Material-UI ist ein beliebtes React UI-Framework, das Googles Material Design implementiert',
+  svelte: 'Svelte',
+  svelteDescription:
+    'Svelte ist ein radikal neuer Ansatz zum Aufbau von Benutzeroberflächen, der Ihren Code in winziges, framework-loses Vanilla-JS kompiliert',
+  testingTools: 'Testwerkzeuge',
+  testingToolsDescription:
+    'Werkzeuge wie Jest, React Testing Library und Cypress zur Sicherstellung von Code-Qualität und Funktionalität',
+  typescript: 'TypeScript',
+  typescriptDescription:
+    'TypeScript ist eine typisierte Obermenge von JavaScript, die zu normalem JavaScript kompiliert wird',
+  webpack: 'Webpack',
+  webpackDescription:
+    'Webpack ist ein statischer Modul-Bundler für moderne JavaScript-Anwendungen',
+  git: 'Git',
+  gitDescription:
+    'Git ist ein verteiltes Versionskontrollsystem zur Verfolgung von Änderungen im Quellcode während der Softwareentwicklung',
+  redux: 'Redux',
+  reduxDescription:
+    'Redux ist ein vorhersehbarer Zustandscontainer für JavaScript-Apps, oft mit React verwendet',
+  graphql: 'GraphQL',
+  graphqlDescription:
+    'GraphQL ist eine Abfragesprache für APIs und eine Laufzeit zum Ausführen dieser Abfragen mit Ihren vorhandenen Daten',
+  nodejs: 'Node.js',
+  nodejsDescription:
+    'Node.js ist eine JavaScript-Laufzeitumgebung, die auf Chromes V8 JavaScript-Engine aufbaut, oft für Backend-Entwicklung verwendet',
+  restapi: 'REST API',
+  restapiDescription:
+    'REST (Representational State Transfer) ist ein Architekturstil für die Gestaltung vernetzter Anwendungen',
+  astro: 'Astro',
+  astroDescription:
+    'Astro ist ein moderner Static-Site-Generator, der blitzschnelle Leistung liefert, indem standardmäßig kein JavaScript ausgeliefert wird',
   projects: 'PROJEKTE',
   seeProjects: 'Lass uns meine Projekte sehen',
   all: 'Alle',
@@ -107,4 +138,4 @@ export const deTranslation = {
   themeColors: 'Design-Farben',
   messageSended: 'Nachricht gesendet!!',
   loading: 'LADEN',
-};
+}
