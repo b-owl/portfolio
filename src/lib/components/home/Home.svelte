@@ -64,7 +64,7 @@
   function randomSnowflakeConfig(i: number): Snowflake {
     return {
       scale: SNOWFLAKE_MIN_SCALE + Math.random() * (1 - SNOWFLAKE_MIN_SCALE),
-      x: 0.83 * Math.random() * 100,
+      x: Math.random() * 100,
       y: -10 - Math.random() * 100,
       rotation: Math.floor(Math.random() * 360),
       snowIcon: SNOW_ICONS[i % SNOW_ICONS.length],
@@ -127,7 +127,10 @@
 <div
   class="flex flex-col items-start justify-center w-full p-10 overflow-hidden activeSection md:pl-48 md:pr-48 gap-14"
 >
-  <div class="snowframe" aria-hidden="true">
+  <div
+    class="absolute inset-0 pointer-events-none snowframe"
+    aria-hidden="true"
+  >
     {#each snowflakes as flake}
       <div
         class="text-blue-200 snowflake"
@@ -214,6 +217,11 @@
 </div>
 
 <style>
+  .snowframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   #img-animate-effect {
     animation: scaleUp 0.4s ease-in-out forwards;
   }
