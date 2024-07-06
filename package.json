@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build",
+    "build": "vite build && copy .nojekyll build",
     "preview": "vite preview",
-    "deploy": "npx gh-pages -d dist",
+    "deploy": "yarn build && npx gh-pages -d dist",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
