@@ -1,6 +1,7 @@
 <script>
   import { page } from '$app/stores'
   import { i18n } from '../../../i18n'
+  import { base } from '$app/paths';
 </script>
 
 <header class="fixed top-0 z-20 w-full -translate-x-1/2 left-1/2">
@@ -9,7 +10,7 @@
       dir={$i18n.language === 'fa' ? 'rtl' : 'ltr'}
       class="relative flex items-center justify-center h-12 p-0 px-6 m-0 rounded-ee-3xl rounded-es-3xl bg-secondary/40 backdrop-filter backdrop-blur-sm"
     >
-      {#each [{ path: '/', label: $i18n.t('navItem1') }, { path: '/about', label: $i18n.t('navItem2') }, { path: '/service', label: $i18n.t('navItem3') }, { path: '/showcase', label: $i18n.t('navItem4') }, { path: '/contact', label: $i18n.t('navItem5') }] as { path, label }}
+      {#each [{ path: '/', label: $i18n.t('navItem1') }, { path: `${base}/about`, label: $i18n.t('navItem2') }, { path: `${base}/service`, label: $i18n.t('navItem3') }, { path: `${base}/showcase`, label: $i18n.t('navItem4') }, { path: `${base}/contact`, label: $i18n.t('navItem5') }] as { path, label }}
         <li
           class="relative h-full"
           aria-current={$page.url.pathname === path ? 'page' : undefined}
