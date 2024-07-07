@@ -5,7 +5,7 @@
     "dev": "vite dev --port 3000",
     "build": "vite build && copy .nojekyll build",
     "preview": "vite preview",
-    "deploy": "yarn build && npx gh-pages -d build",
+    "deploy": "yarn build && touch .nojekyll && echo 'mehdikeramati.ir' > ./build/CNAME && npx gh-pages -d build --nojekyll",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },

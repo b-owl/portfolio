@@ -2,7 +2,7 @@ export const enTranslation = {
   navItem1: 'Home',
   navItem2: 'About',
   navItem3: 'Service',
-  navItem4: 'Showcase',
+  navItem4: 'Projects',
   navItem5: 'Contact',
   followMe: 'Follow Me',
   myName: 'I am Mehdi Keramati',

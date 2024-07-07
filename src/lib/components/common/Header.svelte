@@ -10,7 +10,7 @@
       dir={$i18n.language === 'fa' ? 'rtl' : 'ltr'}
       class="relative flex items-center justify-center h-12 p-0 px-6 m-0 rounded-ee-3xl rounded-es-3xl bg-secondary/40 backdrop-filter backdrop-blur-sm"
     >
-      {#each [{ path: '/', label: $i18n.t('navItem1') }, { path: `${base}/about`, label: $i18n.t('navItem2') }, { path: `${base}/service`, label: $i18n.t('navItem3') }, { path: `${base}/showcase`, label: $i18n.t('navItem4') }, { path: `${base}/contact`, label: $i18n.t('navItem5') }] as { path, label }}
+      {#each [{ path: '/', label: $i18n.t('navItem1') }, { path: `${base}/about`, label: $i18n.t('navItem2') }, { path: `${base}/service`, label: $i18n.t('navItem3') }, { path: `${base}/projects`, label: $i18n.t('navItem4') }, { path: `${base}/contact`, label: $i18n.t('navItem5') }] as { path, label }}
         <li
           class="relative h-full"
           aria-current={$page.url.pathname === path ? 'page' : undefined}
