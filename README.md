@@ -1,6 +1,7 @@
 # Portfolio
 
 This is my personal portfolio website, showcasing my skills, projects, and experiences. Initially developed using ReactJS, I have now rewritten it with SvelteKit for better performance and a more modern development experience.
+###### [React version](https://github.com/b-owl/portfolio-reactjs-version)
 
 ![Portfolio Preview](https://drive.google.com/uc?id=1q2b-H6RY6wl-Njs8g7gKrbf4twGDcwwj)
 
