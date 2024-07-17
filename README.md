@@ -1,41 +1,130 @@
-# create-svelte
+# Portfolio
 
-Everything you need to build a Svelte project, powered by
-[`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is my personal portfolio website, showcasing my skills, projects, and experiences. Initially developed using ReactJS, I have now rewritten it with SvelteKit for better performance and a more modern development experience.
 
-## Creating a project
+![Portfolio Preview](https://drive.google.com/uc?id=1q2b-H6RY6wl-Njs8g7gKrbf4twGDcwwj)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Table of Contents
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Project](#running-the-project)
+- [Folder Structure](#folder-structure)
+- [License](#license)
+- [Contact](#contact)
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Introduction
+
+This portfolio website is designed to provide a comprehensive view of my professional journey, including my skills, projects, and experiences. It is built using SvelteKit to take advantage of its fast and efficient rendering capabilities.
+
+## Features
+
+- **Responsive Design:** Ensures optimal viewing experience on all devices.
+- **Dynamic Content:** Showcases projects and experiences dynamically.
+- **Modern UI/UX:** Clean and intuitive user interface.
+- **Performance Optimized:** Fast load times and smooth transitions.
+
+## Technologies Used
+
+- **SvelteKit:** Main framework for building the portfolio.
+- **Svelte:** For component-based development.
+- **JavaScript/TypeScript:** For adding interactivity and functionality.
+- **CSS/SCSS:** For styling the website.
+- **Tailwind CSS:** For utility-first CSS framework.
+- **daisyUI:** For UI components based on Tailwind CSS.
+- **Sass:** For advanced CSS preprocessing.
+- **Swiper:** For modern mobile touch slider.
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/your-portfolio.git
+   cd your-portfolio
+
+### Install dependencies:
+
+```
+npm install
+# or
+yarn install
+
 ```
 
-## Developing
+### Running the Project
 
-Once you've created a project and installed dependencies with `npm install` (or
-`pnpm install` or `yarn`), start a development server:
-
-```bash
+To start the development server:
+```
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# or
+yarn dev
 ```
+Open http://localhost:3000 in your browser to see the portfolio.
 
-## Building
+### To build the project for production:
 
-To create a production version of your app:
-
-```bash
+```
 npm run build
+# or
+yarn build
 ```
 
-You can preview the production build with `npm run preview`.
+## Folder Structure
+```
+portfolio/
+├── .svelte-kit/
+├── .vscode/
+├── .yarn/
+├── build/
+├── node_modules/
+├── src/
+│   ├── i18n/
+│   ├── lib/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   └── stores/
+│   ├── routes/
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── service/
+│   │   └── showcase/
+│   │       ├── +layout.svelte
+│   │       ├── +layout.ts
+│   │       ├── +page.svelte
+│   │       ├── +page.ts
+│   │       └── styles.css
+│   ├── types/
+│   └── app.html
+├── static/
+│   ├── favicon.ico
+│   └── robots.txt
+├── package.json
+└── svelte.config.js
+```
 
-> To deploy your app, you may need to install an
-> [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://choosealicense.com/licenses/mit/) file for details.
+
+## Contact
+
+- Email: 0mehdikeramati1@gmail.com
+- LinkedIn: [in/mehdikeramti](https://www.linkedin.com/in/mehdikeramti)
+
+
+
+
