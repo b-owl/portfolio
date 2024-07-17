@@ -53,8 +53,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
-   cd your-portfolio
+   git clone https://github.com/b-owl/portfolio.git
+   cd portfolio
 
 ### Install dependencies:
 
