@@ -8,14 +8,21 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-    // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
-    // See https://kit.svelte.dev/docs/adapters for more information about adapters.
-    adapter: adapter(),
-    paths: {
-      base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  adapter: adapter(),
+  paths: {
+    base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+  },
+  prerender: {
+    handleHttpError: ({ path, status }) => {
+      // Suppress 404s for certain paths during prerendering if necessary
+      if (status === 404) {
+        console.warn(`404 error encountered for path: ${path}`);
+        return;
+      }
+      throw new Error(`${status} error for path: ${path}`);
     },
   },
 }
 
+}
 export default config

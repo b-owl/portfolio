@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev --port 3000",
-    "build": "vite build && copy .nojekyll build",
+    "build": "vite build && cp .nojekyll build",
     "preview": "vite preview",
     "deploy": "yarn build && touch .nojekyll && echo 'mehdikeramati.ir' > ./build/CNAME && npx gh-pages -d build --nojekyll",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
