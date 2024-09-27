@@ -2,6 +2,8 @@
   import { MePicCarton } from '$lib/assets/dummy'
   import Icon from '@iconify/svelte'
   import { i18n } from '../../../i18n'
+  import { isLoading } from '$lib/stores/store'
+  import { onMount } from 'svelte'
 
   $: aboutData = [
     {
@@ -25,6 +27,14 @@
       icon: 'icon-park-twotone:owl',
     },
   ]
+
+  onMount(() => {
+    const img = new Image()
+    img.src = MePicCarton
+    img.onload = () => {
+      isLoading.set(false)
+    }
+  })
 </script>
 
 <section
@@ -36,9 +46,11 @@
       class="absolute rounded-full glass bg-secondary w-72 h-72 top-36 left-14 rtl:right-14"
     />
     <img
-      class="w-full h-full scale-effect"
+      class="w-full h-full"
+      id={"scale-effect"}
       src={MePicCarton}
       alt="Mehdi Keramati"
+      on:load={() => isLoading.set(false)}
     />
   </div>
   <div class="basis-full xl:basis-2/3">
@@ -84,7 +96,7 @@
 </section>
 
 <style>
-  .scale-effect {
+  #scale-effect {
     animation: scaleUp 0.4s ease-in-out forwards;
   }
 

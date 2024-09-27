@@ -1,13 +1,15 @@
 // src/store.ts
 import { writable } from 'svelte/store'
 
+
 function createSettingsStore() {
+  
   const { subscribe, update } = writable({
     currentTheme: 'night' as string,
     currentLang: 'en' as string,
     settings: false,
   })
-
+  
   return {
     subscribe,
     setTheme: (theme: string) => {
@@ -21,4 +23,5 @@ function createSettingsStore() {
   }
 }
 
+export let isLoading = writable(true)
 export const settingsStore = createSettingsStore()

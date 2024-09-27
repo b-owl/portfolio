@@ -4,6 +4,7 @@
   import CVfile from '$lib/assets/cv.pdf'
   import { derived, writable, type Writable } from 'svelte/store'
   import { i18n } from '../../../i18n'
+  import { isLoading } from '$lib/stores/store'
 
   let iconsLoaded: Writable<boolean> = writable(false)
 
@@ -116,11 +117,14 @@
   }
 
   onMount(() => {
+    const img = new Image()
+    img.src = MePic
+    img.onload = () => {
+      isLoading.set(false)
+    }
+
     typewriter()
     updateSnowflakes()
-    // setTimeout(() => {
-    //   iconsLoaded.set(false)
-    // }, 100)
   })
 </script>
 
@@ -208,7 +212,7 @@
       </a>
     </div>
     <div
-      id="img-animate-effect"
+      id={!$isLoading ? 'img-animate-effect' : ''}
       class="fixed hidden w-2/5 me lg:bottom-0 ltr:right-32 rtl:left-32"
     >
       <img src={MePic} alt="me" />

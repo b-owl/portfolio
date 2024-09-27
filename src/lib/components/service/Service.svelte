@@ -3,6 +3,7 @@
   import { register } from 'swiper/element/bundle'
   import { i18n } from '../../../i18n'
   import Icon from '@iconify/svelte'
+  import { isLoading } from '$lib/stores/store'
 
   $: serviceData = [
     {
@@ -100,6 +101,7 @@
   let swiperEl: HTMLElement
 
   onMount(() => {
+    isLoading.set(false)
     Object.assign(swiperEl, {
       slidesPerView: 1,
       spaceBetween: 10,

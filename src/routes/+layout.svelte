@@ -5,14 +5,12 @@
   import Header from '$lib/components/common/Header.svelte'
   import ContactShortcut from '$lib/components/common/ContactShortcut.svelte'
   import Settings from '$lib/components/common/Settings.svelte'
-  import { settingsStore } from '$lib/stores/store'
+  import { settingsStore, isLoading } from '$lib/stores/store'
   import { i18n } from '../i18n/index'
-  import { writable } from 'svelte/store'
   import Loading from '$lib/components/Loading.svelte'
 
   let currentTheme: string
   let currentLang: string
-  let isLoading = writable(true)
 
   onMount(() => {
     settingsStore.subscribe(({ currentTheme: theme, currentLang: lang }) => {
@@ -24,7 +22,7 @@
 
     setTimeout(() => {
       isLoading.set(false)
-    }, 1000)
+    }, 5000)
   })
 </script>
 
@@ -36,15 +34,15 @@
 >
   {#if $isLoading}
     <Loading />
-  {:else}
-    <Header />
-    <ContactShortcut />
-    <Settings />
-
-    <main>
-      <slot />
-    </main>
   {/if}
+  
+  <Header />
+  <ContactShortcut />
+  <Settings />
+
+  <main>
+    <slot />
+  </main>
 </div>
 
 <style>

@@ -3,8 +3,19 @@
   import { ContactPic } from '$lib/assets/dummy'
   import { i18n } from '../../../i18n'
   import { fly } from 'svelte/transition'
+  import { onMount } from 'svelte'
+  import { isLoading } from '$lib/stores/store'
 
   const { AlertClassname, LoadingClassname, form, sendEmail } = setupContact()
+
+
+  onMount(() => {
+    const img = new Image()
+    img.src = ContactPic
+    img.onload = () => {
+      isLoading.set(false)
+    }
+  })
 </script>
 
 <section
@@ -18,7 +29,7 @@
       in:fly={{ x: -200, duration: 400 }}
       class="z-20 w-full h-full"
       src={ContactPic}
-      alt=""
+      alt="contact-us pic"
     />
   </div>
 

@@ -4,7 +4,7 @@
 
 <div
   style="direction: ltr;"
-  class="flex flex-col items-center justify-center w-screen h-screen bg-gray-800"
+  class="flex flex-col items-center justify-center w-screen h-screen fixed top-0 left-0 z-50 bg-gray-800"
 >
   <h1
     class="relative mb-12 text-4xl text-blue-400 loadingAnimation ltr:mr-10 rtl:font-soltan rtl:text-3xl"

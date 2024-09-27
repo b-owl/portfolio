@@ -8,6 +8,7 @@
     getPortfolioTitle,
   } from '$lib/stores/ShowcasesData'
   import type { ProjectDataType } from '../../../types/showcases.d.ts'
+  import { isLoading } from '$lib/stores/store'
 
   let portfolioTitle: any
   let portfolioData: any
@@ -47,6 +48,7 @@
   }
 
   onMount(() => {
+    isLoading.set(false)
     delay = !!portfolioData
   })
 
