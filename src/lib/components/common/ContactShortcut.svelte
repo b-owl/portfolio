@@ -8,7 +8,7 @@
 
   const socialLinks = [
     {
-      href: 'https://www.instagram.com/eule_blauu',
+      href: 'https://www.instagram.com/blue_zoomer',
       icon: 'line-md:instagram',
     },
     {
